@@ -7,15 +7,15 @@ class Pilihan extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 15, 130, 255),
+        backgroundColor: const Color.fromARGB(255, 15, 130, 255),
         body: SafeArea(
             child: Column(
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Container(child: Image.asset('assets/mesincuci.png')),
             Container(
                 alignment: Alignment.center,
-                child: Align(
+                child: const Align(
                   alignment: Alignment.center,
                   child: Text(
                     "LAUNDSHIRT",
@@ -28,7 +28,7 @@ class Pilihan extends StatelessWidget {
                 )),
             Container(
                 alignment: Alignment.center,
-                child: Align(
+                child: const Align(
                   alignment: Alignment.center,
                   child: Text(
                     "Mobile App",
@@ -41,7 +41,7 @@ class Pilihan extends StatelessWidget {
             Container(
                 padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
                 alignment: Alignment.center,
-                child: Align(
+                child: const Align(
                   alignment: Alignment.center,
                   child: Text(
                     "Login Sebagai:",
@@ -58,11 +58,11 @@ class Pilihan extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      minimumSize: Size(300, 50),
+                      minimumSize: const Size(300, 50),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
-                      primary: Color.fromARGB(255, 32, 199, 99)),
-                  child: Text(
+                      primary: const Color.fromARGB(255, 32, 199, 99)),
+                  child: const Text(
                     "Customer",
                     style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
                   )),
@@ -71,11 +71,11 @@ class Pilihan extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      minimumSize: Size(300, 50),
+                      minimumSize: const Size(300, 50),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
-                      primary: Color.fromARGB(255, 32, 199, 99)),
-                  child: Text(
+                      primary: const Color.fromARGB(255, 32, 199, 99)),
+                  child: const Text(
                     "Karyawan",
                     style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
                   )),

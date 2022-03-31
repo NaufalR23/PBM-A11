@@ -6,7 +6,7 @@ void main() => runApp(new MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Pendahuluan(),
     );
   }
@@ -21,20 +21,20 @@ class Pendahuluan extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 15, 130, 255),
+        backgroundColor: const Color.fromARGB(255, 15, 130, 255),
         body: SafeArea(
             child: Column(
           children: [
             Container(
               child: Image.asset('assets/Vector 1.png'),
-              alignment: Alignment(1, 0),
+              alignment: const Alignment(1, 0),
             ),
             Container(
               child: Image.asset('assets/mesincuci.png'),
             ),
             Container(
                 alignment: Alignment.center,
-                child: Align(
+                child: const Align(
                   alignment: Alignment.center,
                   child: Text(
                     "LAUNDSHIRT",
@@ -48,7 +48,7 @@ class Pendahuluan extends StatelessWidget {
                 )),
             Container(
                 alignment: Alignment.center,
-                child: Align(
+                child: const Align(
                   alignment: Alignment.center,
                   child: Text(
                     "Membuat hidup Anda mudah dengan aplikasi laundry berbasis mobile yang membuat urusan cucian lebih baik",
@@ -68,17 +68,17 @@ class Pendahuluan extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) {
-                          return Pilihan();
+                          return const Pilihan();
                         },
                       ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                      minimumSize: Size(300, 50),
+                      minimumSize: const Size(300, 50),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
-                      primary: Color.fromARGB(255, 32, 199, 99)),
-                  child: Text(
+                      primary: const Color.fromARGB(255, 32, 199, 99)),
+                  child: const Text(
                     "Mulai",
                     style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
                   )),
