@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pbma11/pendahuluan.dart';
+import 'package:pbma11/Pilihan.dart';
 
 void main() => runApp(new MyApp());
 
@@ -7,13 +7,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Pilihan(),
+      home: Pendahuluan(),
     );
   }
 }
 
-class Pilihan extends StatelessWidget {
-  const Pilihan({
+class Pendahuluan extends StatelessWidget {
+  const Pendahuluan({
     Key? key,
   }) : super(key: key);
 
@@ -68,7 +68,7 @@ class Pilihan extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) {
-                          return Pendahuluan();
+                          return Pilihan();
                         },
                       ),
                     );
