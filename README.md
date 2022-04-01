@@ -15,4 +15,4 @@
 # Github Statistic
 ![](https://komarev.com/ghpvc/?username=NaufalR23&color=blue)
 
-> [![GiHhub Stats] )(https://github-readme-stats.vercel.app/api?username=NaufalR23&show_icons=true&theme=dark&count_private=true)]
+> [![GiHhub Stats](https://github-readme-stats.vercel.app/api?username=NaufalR23&show_icons=true&theme=dark&count_private=true)](https://discord.gg/q2t55neFxb)
