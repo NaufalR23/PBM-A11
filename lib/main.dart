@@ -37,7 +37,7 @@ class Pendahuluan extends StatelessWidget {
                 child: const Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "contoh",
+                    "LAUNDSHIRT",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
