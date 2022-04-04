@@ -26,11 +26,11 @@ class Pendahuluan extends StatelessWidget {
             child: Column(
           children: [
             Container(
-              child: Image.asset('assets/Vector 1.png'),
+              child: Image.asset('assets/Vektor 1.png'),
               alignment: const Alignment(1, 0),
             ),
             Container(
-              child: Image.asset('assets/mesincuci.png'),
+              child: Image.asset('assets/Group 2.png'),
             ),
             Container(
                 alignment: Alignment.center,
@@ -51,7 +51,7 @@ class Pendahuluan extends StatelessWidget {
                 child: const Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "Membuat hidup Anda lebih mudah dengan aplikasi laundry berbasis mobile yang membuat urusan cucian lebih baik",
+                    "Hidup Anda akan mudah dengan aplikasi laundry berbasis mobile yang membuat urusan cucian Anda lebih baik",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,

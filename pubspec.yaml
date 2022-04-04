@@ -58,9 +58,10 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/mesincuci.png
-    - assets/Vector 1.png
+    - assets/Group 2.png
+    - assets/Vektor 1.png
     - assets/Vector 2.png
+    - assets/bawah.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

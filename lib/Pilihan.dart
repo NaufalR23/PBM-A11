@@ -12,7 +12,7 @@ class Pilihan extends StatelessWidget {
             child: Column(
           children: [
             const SizedBox(height: 50),
-            Container(child: Image.asset('assets/mesincuci.png')),
+            Container(child: Image.asset('assets/group 2.png')),
             Container(
                 alignment: Alignment.center,
                 child: const Align(
@@ -58,7 +58,8 @@ class Pilihan extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(300, 50),
+                      padding: const EdgeInsets.only(
+                          left: 50, right: 50, top: 5, bottom: 5),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
                       primary: const Color.fromARGB(255, 32, 199, 99)),
