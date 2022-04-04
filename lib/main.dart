@@ -51,7 +51,7 @@ class Pendahuluan extends StatelessWidget {
                 child: const Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "Membuat hidup Anda mudah dengan aplikasi laundry berbasis mobile yang membuat urusan cucian lebih baik",
+                    "Membuat hidup Anda lebih mudah dengan aplikasi laundry berbasis mobile yang membuat urusan cucian lebih baik",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
