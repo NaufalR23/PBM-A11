@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbma11/bottomnavigator.dart';
 
 class Pilihan extends StatelessWidget {
   const Pilihan({Key? key}) : super(key: key);
@@ -56,7 +57,16 @@ class Pilihan extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(15),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) {
+                          return const BottomWidget();
+                        },
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.only(
                           left: 50, right: 50, top: 5, bottom: 5),
@@ -72,7 +82,8 @@ class Pilihan extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(300, 50),
+                      padding: const EdgeInsets.only(
+                          left: 50, right: 50, top: 5, bottom: 5),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
                       primary: const Color.fromARGB(255, 32, 199, 99)),
