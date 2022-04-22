@@ -16,7 +16,7 @@ class BottomWidget extends StatefulWidget {
 class _BottomWidgetState extends State<BottomWidget> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    homeApl(),
+    HomeWidget(),
     antrian(),
     notifikasi(),
     profil(),
