@@ -36,7 +36,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
-                          'assets/Group 2.png',
+                          'assets/profil.png',
                         ),
                       ),
                     ),
@@ -182,6 +182,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                           child: Text(
                             'Voucher',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
