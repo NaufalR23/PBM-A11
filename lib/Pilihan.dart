@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbma11/Login.dart';
 import 'package:pbma11/bottomnavigator.dart';
 
 class Pilihan extends StatelessWidget {
@@ -62,7 +63,7 @@ class Pilihan extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) {
-                          return const BottomWidget();
+                          return const HomePageWidget();
                         },
                       ),
                     );

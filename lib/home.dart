@@ -111,15 +111,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                             children: [
                               Align(
                                 alignment: AlignmentDirectional(0, -0.9),
-                                // child: InkWell(
-                                // onTap: () async {
-                                //   await Navigator.push(
-                                //     context,
-                                //     MaterialPageRoute(
-                                //       builder: (context) => HomePageWidget(),
-                                //     ),
-                                //   );
-                                // },
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
                                   color: Color(0xFFF5F5F5),
