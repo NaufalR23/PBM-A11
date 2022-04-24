@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pbma11/bottomnavigator.dart';
 import 'package:pbma11/home.dart';
 import 'package:pbma11/main.dart';
+import 'package:pbma11/Signup.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -82,7 +83,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               controller: textController1,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Username',
+                                hintText: 'Username',
                                 labelStyle: TextStyle(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF95A1AC),
@@ -128,7 +129,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               controller: textController2,
                               obscureText: !passwordVisibility,
                               decoration: InputDecoration(
-                                labelText: 'Password',
+                                hintText: 'Password',
                                 labelStyle: TextStyle(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF95A1AC),
@@ -243,7 +244,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                 child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) {
+                                            return const Signup();
+                                          },
+                                        ),
+                                      );
+                                    },
                                     style: ElevatedButton.styleFrom(
                                         minimumSize: Size(130, 40),
                                         shape: RoundedRectangleBorder(
