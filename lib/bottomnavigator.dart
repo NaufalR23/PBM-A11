@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pbma11/antrian.dart';
 import 'package:pbma11/home.dart';
 import 'package:pbma11/notifikasi.dart';
-import 'package:pbma11/notifikasi.dart';
 import 'package:pbma11/profil.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:flutter/src/material/icons.dart';
