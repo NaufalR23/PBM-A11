@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pbma11/edit%20profil.dart';
+import 'package:pbma11/maps.dart';
 import 'package:pbma11/notifikasi.dart';
 
 class ProfilWidget extends StatefulWidget {
@@ -65,7 +66,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Text(
                             '[Username]',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Poppins',
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -76,7 +77,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                             child: Text(
                               '[Email_Address]',
                               style: TextStyle(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Poppins',
                                 color: Color(0xB4FFFFFF),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -123,7 +124,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Text(
                             'Edit Profile',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -186,9 +187,9 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Change Password',
+                            'Lokasi Laundry',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -202,7 +203,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => NotifikasiWidget(),
+                                    builder: (context) => MapController(),
                                   ),
                                 );
                               },
@@ -253,7 +254,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Text(
                             'Notification Settings',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -318,7 +319,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Text(
                             'Terms of Services',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -383,7 +384,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Text(
                             'Terms of Services',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -448,7 +449,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Text(
                             'Terms of Services',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
