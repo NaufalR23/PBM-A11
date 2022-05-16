@@ -46,7 +46,7 @@ class _BodyState extends State<Body> {
                 Text(
                   "Edit Profile",
                   style: TextStyle(
-                      fontFamily: "Made-Tommy",
+                      fontFamily: "Poppins",
                       fontWeight: FontWeight.w700,
                       fontSize: 36),
                 ),
@@ -193,7 +193,7 @@ class _BodyState extends State<Body> {
             Text(
               "Pilih Profile Photo",
               style: TextStyle(
-                  fontFamily: "Made-Tommy",
+                  fontFamily: "Poppins",
                   fontWeight: FontWeight.w500,
                   fontSize: 24),
             ),
