@@ -12,21 +12,21 @@ class MapLokasi extends StatefulWidget {
 class _MapLokasiState extends State<MapLokasi> {
   late final Completer<GoogleMapController> _controller = Completer();
   final Set<Marker> _markers = {};
-  final LatLng _posisiToko = LatLng(-7.025587, 112.743114);
+  final LatLng _posisiLaundry = LatLng(-7.025587, 112.743114);
 
   @override
   void initState() {
     _markers.add(
       Marker(
-        markerId: MarkerId("Toko"),
-        position: _posisiToko,
+        markerId: MarkerId("Laundry"),
+        position: _posisiLaundry,
         icon: BitmapDescriptor.defaultMarker,
       ),
     );
     super.initState();
   }
 
-  static CameraPosition get _LokasiToko => const CameraPosition(
+  static CameraPosition get _LokasiLaundry => const CameraPosition(
       bearing: 192.8334901395799,
       target: LatLng(-7.025587, 112.743114),
       tilt: 59,
@@ -42,14 +42,15 @@ class _MapLokasiState extends State<MapLokasi> {
       body: GoogleMap(
         mapType: MapType.normal,
         zoomControlsEnabled: false,
-        initialCameraPosition: CameraPosition(target: _posisiToko, zoom: 14.0),
+        initialCameraPosition:
+            CameraPosition(target: _posisiLaundry, zoom: 14.0),
         markers: _markers,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: _setLokasiToko,
+        onPressed: _setLokasiLaundry,
         label: const Text('Lokasi Laundry'),
         backgroundColor: Color(0xFF197BFF),
         icon: const Icon(Icons.store),
@@ -57,8 +58,8 @@ class _MapLokasiState extends State<MapLokasi> {
     );
   }
 
-  Future<void> _setLokasiToko() async {
+  Future<void> _setLokasiLaundry() async {
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_LokasiToko));
+    controller.animateCamera(CameraUpdate.newCameraPosition(_LokasiLaundry));
   }
 }
