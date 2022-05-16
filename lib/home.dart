@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbma11/notifikasi.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -53,10 +54,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(200, 0, 0, 0),
-                      child: Icon(
-                        Icons.camera_alt,
-                        color: Colors.white,
-                        size: 40,
+                      child: InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NotifikasiWidget(),
+                            ),
+                          );
+                        },
+                        child: Icon(
+                          Icons.camera_alt,
+                          color: Colors.white,
+                          size: 40,
+                        ),
                       ),
                     ),
                   ],

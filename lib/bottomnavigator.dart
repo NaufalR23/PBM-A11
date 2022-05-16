@@ -19,7 +19,7 @@ class _BottomWidgetState extends State<BottomWidget> {
     HomeWidget(),
     AntrianWidget(),
     NotifikasiWidget(),
-    profil(),
+    ProfilWidget(),
   ];
 
   void _onItemTapped(int index) {
