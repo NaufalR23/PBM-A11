@@ -192,7 +192,7 @@ class _BodyState extends State<Body> {
                   fontSize: 24),
             ),
             SizedBox(
-              height: 20,
+              height: 16,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

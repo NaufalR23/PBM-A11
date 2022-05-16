@@ -203,7 +203,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => MapController(),
+                                    builder: (context) => MapLokasi(),
                                   ),
                                 );
                               },

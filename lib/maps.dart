@@ -1,19 +1,18 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapController extends StatefulWidget {
-  const MapController({Key? key}) : super(key: key);
+class MapLokasi extends StatefulWidget {
+  const MapLokasi({Key? key}) : super(key: key);
 
   @override
-  _MapControllerState createState() => _MapControllerState();
+  _MapLokasiState createState() => _MapLokasiState();
 }
 
-class _MapControllerState extends State<MapController> {
+class _MapLokasiState extends State<MapLokasi> {
   late final Completer<GoogleMapController> _controller = Completer();
   final Set<Marker> _markers = {};
-  final LatLng _posisiToko = LatLng(-6.199770686808422, 107.02275889552561);
+  final LatLng _posisiToko = LatLng(-7.025587, 112.743114);
 
   @override
   void initState() {
@@ -29,9 +28,9 @@ class _MapControllerState extends State<MapController> {
 
   static CameraPosition get _LokasiToko => const CameraPosition(
       bearing: 192.8334901395799,
-      target: LatLng(-6.199770686808422, 107.02275889552561),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
+      target: LatLng(-7.025587, 112.743114),
+      tilt: 59,
+      zoom: 19);
 
   @override
   Widget build(BuildContext context) {
