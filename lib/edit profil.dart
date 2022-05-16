@@ -28,158 +28,153 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage("assets/Vector_7.png"),
-          fit: BoxFit.cover,
-        )),
         child: Scaffold(
-          backgroundColor: Color(0xFF197BFF),
-          body: Container(
-            padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-            child: ListView(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              // mainAxisAlignment: MainAxisAlignment.start,
-              // crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  "Edit Profile",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 36),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                  child: Center(
-                    child: Stack(
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 70.0,
-                          child: ClipOval(
-                            child: (_image != null)
-                                ? Image.file(
-                                    _image!,
-                                    width: 250,
-                                    height: 250,
-                                    fit: BoxFit.cover,
-                                  )
-                                : Image.asset("assets/profil.png"),
-                          ),
-                          backgroundColor: Colors.white,
-                        ),
-                        Positioned(
-                            bottom: 0,
-                            right: 10,
-                            child: InkWell(
-                              onTap: () {
-                                showModalBottomSheet(
-                                    context: context,
-                                    builder: ((Builder) => bottomSheet()));
-                              },
-                              child: CircleAvatar(
-                                radius: 20,
-                                backgroundColor: Colors.white,
-                                child: Icon(
-                                  Icons.camera_alt,
-                                  color: Colors.black,
-                                  size: 28,
-                                ),
-                              ),
-                            )
-                            // ),
-                            )
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.person,
-                          color: Colors.black,
-                          size: 24,
-                        ),
-                        hintText: "test",
-                        labelText: "Username"),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.mail,
-                          color: Colors.black,
-                          size: 24,
-                        ),
-                        hintText: "test123@gmail.com",
-                        labelText: "Email"),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  child: TextField(
-                    obscureText: seePass,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.lock,
-                        color: Colors.black,
-                        size: 24,
-                      ),
-                      hintText: "**********",
-                      labelText: "Password",
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          Icons.visibility,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            seePass = !seePass;
-                          });
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.house,
-                          color: Colors.black,
-                          size: 24,
-                        ),
-                        hintText: "test",
-                        labelText: "Alamat"),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(top: 30),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Hapus Akun",
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        decoration: TextDecoration.underline),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  child: RoundedButton(
-                    text: "Simpan",
-                    press: () {},
-                  ),
-                )
-              ],
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      body: Container(
+        padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              "Edit Profile",
+              style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 36),
             ),
-          ),
-        ));
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child: Center(
+                child: Stack(
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 70.0,
+                      child: ClipOval(
+                        child: (_image != null)
+                            ? Image.file(
+                                _image!,
+                                width: 250,
+                                height: 250,
+                                fit: BoxFit.cover,
+                              )
+                            : Image.asset("assets/profil.png"),
+                      ),
+                      backgroundColor: Colors.white,
+                    ),
+                    Positioned(
+                        bottom: 0,
+                        right: 10,
+                        child: InkWell(
+                          onTap: () {
+                            showModalBottomSheet(
+                                context: context,
+                                builder: ((Builder) => bottomSheet()));
+                          },
+                          child: CircleAvatar(
+                            radius: 20,
+                            backgroundColor: Colors.white,
+                            child: Icon(
+                              Icons.camera_alt,
+                              color: Colors.black,
+                              size: 28,
+                            ),
+                          ),
+                        )
+                        // ),
+                        )
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+              child: TextField(
+                decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                    hintText: "test",
+                    labelText: "Username"),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+              child: TextField(
+                decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.mail,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                    hintText: "test123@gmail.com",
+                    labelText: "Email"),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+              child: TextField(
+                obscureText: seePass,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.black,
+                    size: 24,
+                  ),
+                  hintText: "**********",
+                  labelText: "Password",
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      Icons.visibility,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        seePass = !seePass;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+              child: TextField(
+                decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.house,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                    hintText: "test",
+                    labelText: "Alamat"),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 30),
+              alignment: Alignment.center,
+              child: Text(
+                "Hapus Akun",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                    decoration: TextDecoration.underline),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+              child: RoundedButton(
+                text: "Simpan",
+                press: () {},
+              ),
+            )
+          ],
+        ),
+      ),
+    ));
   }
 
   Widget bottomSheet() {
