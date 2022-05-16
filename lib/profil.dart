@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pbma11/edit%20profil.dart';
 import 'package:pbma11/notifikasi.dart';
 
 class ProfilWidget extends StatefulWidget {
@@ -136,7 +137,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => NotifikasiWidget(),
+                                    builder: (context) => Body(),
                                   ),
                                 );
                               },
