@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbma11/edit%20profil.dart';
 import 'package:pbma11/notifikasi.dart';
 
 class HomeWidget extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 47, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -59,7 +60,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => NotifikasiWidget(),
+                              builder: (context) => Body(),
                             ),
                           );
                         },

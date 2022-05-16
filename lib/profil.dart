@@ -45,8 +45,8 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
-                        child: Image.network(
-                          'https://picsum.photos/seed/339/600',
+                        child: Image.asset(
+                          "assets/profil.png",
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,

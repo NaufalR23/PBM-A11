@@ -3,7 +3,6 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:selibu/Screen/EditProfile/component/background.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pbma11/rounded_button.dart';
 
@@ -65,7 +64,7 @@ class _BodyState extends State<Body> {
                                     height: 250,
                                     fit: BoxFit.cover,
                                   )
-                                : Image.asset("assets/user.png"),
+                                : Image.asset("assets/profil.png"),
                           ),
                           backgroundColor: Colors.white,
                         ),

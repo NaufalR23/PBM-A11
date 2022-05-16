@@ -22,7 +22,7 @@ class _AntrianWidgetState extends State<AntrianWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 26, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [

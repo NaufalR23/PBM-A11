@@ -34,7 +34,7 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: Container(
                   width: 430,
-                  height: 545,
+                  height: 542,
                   decoration: BoxDecoration(
                     color: Color(0xFFEEEEEE),
                     borderRadius: BorderRadius.only(
