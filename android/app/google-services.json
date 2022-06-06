@@ -1,55 +1,33 @@
 {
   "project_info": {
-<<<<<<< HEAD
     "project_number": "608824952594",
     "project_id": "pbm-firebase",
     "storage_bucket": "pbm-firebase.appspot.com"
-=======
-    "project_number": "101806385771",
-    "project_id": "laundshirt",
-    "storage_bucket": "laundshirt.appspot.com"
->>>>>>> d470d4bc3a85a529862bdd46d00ca408b4728437
   },
   "client": [
     {
       "client_info": {
-<<<<<<< HEAD
         "mobilesdk_app_id": "1:608824952594:android:273d03a2896485ca2f55cb",
-=======
-        "mobilesdk_app_id": "1:101806385771:android:064fcad7122dc2f25d9f2e",
->>>>>>> d470d4bc3a85a529862bdd46d00ca408b4728437
         "android_client_info": {
           "package_name": "com.example.pbma11"
         }
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
           "client_id": "608824952594-4deln7l4nd3cshqhe554bd7ivnt6gcfq.apps.googleusercontent.com",
-=======
-          "client_id": "101806385771-2h1cs8hr5hg93lj2sv425033bvoe4lou.apps.googleusercontent.com",
->>>>>>> d470d4bc3a85a529862bdd46d00ca408b4728437
           "client_type": 3
         }
       ],
       "api_key": [
         {
-<<<<<<< HEAD
           "current_key": "AIzaSyAYzJtPpk-XCb4YQpcwEKswyPJrxd2B0Qw"
-=======
-          "current_key": "AIzaSyA0WOHeWY4IyLk29GLnCWBXV4HkhGHFwRA"
->>>>>>> d470d4bc3a85a529862bdd46d00ca408b4728437
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-<<<<<<< HEAD
               "client_id": "608824952594-4deln7l4nd3cshqhe554bd7ivnt6gcfq.apps.googleusercontent.com",
-=======
-              "client_id": "101806385771-2h1cs8hr5hg93lj2sv425033bvoe4lou.apps.googleusercontent.com",
->>>>>>> d470d4bc3a85a529862bdd46d00ca408b4728437
               "client_type": 3
             }
           ]
