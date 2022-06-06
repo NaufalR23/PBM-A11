@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pbma11/Login.dart';
-import 'package:pbma11/auth_service.dart';
 import 'package:pbma11/bottomnavigator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
