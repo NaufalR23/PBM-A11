@@ -331,6 +331,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.0"
+  google_maps_controller:
+    dependency: "direct main"
+    description:
+      name: google_maps_controller
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   google_maps_flutter:
     dependency: "direct main"
     description:
@@ -617,7 +624,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.3"
+    version: "5.0.0"
   quiver:
     dependency: transitive
     description:
