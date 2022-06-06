@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pbma11/home.dart';
 import 'package:pbma11/Login.dart';
 
 class Signup extends StatefulWidget {
@@ -10,6 +10,11 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  late TextEditingController textController1;
+  late TextEditingController textController2;
+  late bool passwordVisibility;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
   Widget _backButton() {
     return InkWell(
       onTap: () {
@@ -113,9 +118,10 @@ class _SignupState extends State<Signup> {
                                   borderRadius: BorderRadius.circular(8),
                                 )),
                             onPressed: () {
-                              Navigator.push(context,
+                              do_signup();
+                              Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const HomePageWidget();
+                                return const SignIn();
                               }));
                             },
                             child: const Text(
@@ -134,6 +140,21 @@ class _SignupState extends State<Signup> {
         )),
       ),
     );
+  }
+  Future<void> do_signup() async {
+    try {
+      var email = textController1.text;
+      var pass = textController1.text;
+      var res = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: pass,
+      );
+      print('sign up success');
+      print(res);
+    } catch (ex) {
+      print('exception signup');
+      print(ex);
+    }
   }
 }
 

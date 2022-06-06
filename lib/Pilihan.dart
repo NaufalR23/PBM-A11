@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbma11/Login.dart';
-import 'package:pbma11/bottomnavigator.dart';
+// import 'package:pbm_a11/bottomnavigator.dart';
 
 class Pilihan extends StatelessWidget {
   const Pilihan({Key? key}) : super(key: key);
@@ -63,7 +63,7 @@ class Pilihan extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) {
-                          return const HomePageWidget();
+                          return const SignIn();
                         },
                       ),
                     );

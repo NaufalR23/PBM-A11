@@ -563,7 +563,7 @@ packages:
     source: hosted
     version: "1.11.1"
   persistent_bottom_nav_bar:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: persistent_bottom_nav_bar
       url: "https://pub.dartlang.org"

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pbma11/bottomnavigator.dart';
@@ -5,14 +6,14 @@ import 'package:pbma11/home.dart';
 import 'package:pbma11/main.dart';
 import 'package:pbma11/Signup.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+class SignIn extends StatefulWidget {
+  const SignIn({Key? key}) : super(key: key);
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _SignInState createState() => _SignInState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _SignInState extends State<SignIn> {
   late TextEditingController textController1;
   late TextEditingController textController2;
   late bool passwordVisibility;
@@ -201,14 +202,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) {
-                                        return const BottomWidget();
-                                      },
-                                    ),
-                                  );
+                                  _doLogin();                     
                                 },
                                 style: ElevatedButton.styleFrom(
                                     minimumSize: Size(300, 50),
@@ -338,5 +332,31 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         ),
       ),
     );
+  }
+  _doLogin() async {
+    try {
+      setState(() {});
+      var email = textController1.text;
+      var pass = textController2.text;
+      print('sedang login...');
+      var res = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: pass,
+      );
+
+      print('hasil login:');
+      print(res);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+        return const HomeWidget();
+      }));
+    } catch (ex) {
+      print('exception login');
+      print(ex.runtimeType);
+      if (ex is FirebaseAuthException) {
+        print(ex);
+        print(ex.message);
+        setState(() {});
+      }
+    }
   }
 }
