@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pbma11/edit%20profil.dart';
 import 'package:pbma11/notifikasi.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -60,7 +62,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Body(),
+                              builder: (context) => EditWidget(),
                             ),
                           );
                         },

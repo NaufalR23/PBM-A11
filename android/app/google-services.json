@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608824952594",
+    "project_id": "pbm-firebase",
+    "storage_bucket": "pbm-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608824952594:android:273d03a2896485ca2f55cb",
+        "android_client_info": {
+          "package_name": "com.example.pbma11"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608824952594-4deln7l4nd3cshqhe554bd7ivnt6gcfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYzJtPpk-XCb4YQpcwEKswyPJrxd2B0Qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608824952594-4deln7l4nd3cshqhe554bd7ivnt6gcfq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

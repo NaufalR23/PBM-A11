@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pbma11/edit%20profil.dart';
+import 'package:pbma11/main.dart';
 import 'package:pbma11/maps.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pbma11/notifikasi.dart';
 
 class ProfilWidget extends StatefulWidget {
@@ -138,7 +140,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Body(),
+                                    builder: (context) => EditWidget(),
                                   ),
                                 );
                               },
@@ -447,7 +449,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Terms of Services',
+                            'Logout',
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
@@ -460,12 +462,13 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
                             child: InkWell(
                               onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => NotifikasiWidget(),
-                                  ),
-                                );
+                                FirebaseAuth.instance.signOut().then((value) {
+                                  print("Telah Keluar");
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MyApp()));
+                                });
                               },
                               child: Icon(
                                 Icons.chevron_right_rounded,

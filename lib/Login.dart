@@ -4,25 +4,25 @@ import 'package:pbma11/bottomnavigator.dart';
 import 'package:pbma11/home.dart';
 import 'package:pbma11/main.dart';
 import 'package:pbma11/Signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({Key? key}) : super(key: key);
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _LoginWidgetState createState() => _LoginWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
-  late TextEditingController textController1;
-  late TextEditingController textController2;
+class _LoginWidgetState extends State<LoginWidget> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   late bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
     passwordVisibility = false;
   }
 
@@ -30,7 +30,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color.fromARGB(255, 15, 130, 255),
+      backgroundColor: Color(0xFF0F82FF),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -80,10 +80,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                             child: TextFormField(
-                              controller: textController1,
+                              controller: emailController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: 'Username',
+                                hintText: 'Email',
                                 labelStyle: TextStyle(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF95A1AC),
@@ -126,7 +126,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: TextFormField(
-                              controller: textController2,
+                              controller: passwordController,
                               obscureText: !passwordVisibility,
                               decoration: InputDecoration(
                                 hintText: 'Password',
@@ -201,13 +201,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) {
-                                        return const BottomWidget();
-                                      },
-                                    ),
+                                  FirebaseAuth.instance
+                                      .signInWithEmailAndPassword(
+                                          email: emailController.text,
+                                          password: passwordController.text)
+                                      .then((value) {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                BottomWidget()));
+                                  }).onError(
+                                    (error, stackTrace) {
+                                      print("error ${error.toString()}");
+                                    },
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
@@ -228,45 +235,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Text(
-                                  'Tidak punya akun?',
-                                  style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (_) {
-                                            return const Signup();
-                                          },
-                                        ),
-                                      );
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(130, 40),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8)),
-                                        primary:
-                                            Color.fromARGB(255, 15, 130, 255)),
-                                    child: const Text(
-                                      "SignUp",
-                                      style: TextStyle(
-                                          fontSize: 14, fontFamily: "Poppins"),
-                                    )),
-                              ),
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) {
+                                          return SignUpWidget();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  child: const Text(
+                                    'Tidak Punya Akun?',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white),
+                                  )),
                             ],
                           ),
                           Text(

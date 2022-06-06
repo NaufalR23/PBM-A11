@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:io';
 import 'dart:async';
 import 'dart:io';
@@ -6,16 +7,16 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pbma11/rounded_button.dart';
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class EditWidget extends StatefulWidget {
+  const EditWidget({Key? key}) : super(key: key);
 
   @override
-  State<Body> createState() => _BodyState();
+  State<EditWidget> createState() => _EditWidgetState();
 }
 
 bool seePass = false;
 
-class _BodyState extends State<Body> {
+class _EditWidgetState extends State<EditWidget> {
   File? _image;
 
   Future pickImage(ImageSource source) async {
@@ -29,7 +30,7 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Container(
         child: Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: Color(0xFF197BFF),
       body: Container(
         padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: ListView(
@@ -170,12 +171,28 @@ class _BodyState extends State<Body> {
                 text: "Simpan",
                 press: () {},
               ),
-            )
+            ),
           ],
         ),
       ),
     ));
   }
+
+  // void offer(BuildContext context) {
+  //   var alertDialog = AlertDialog(
+  //     title: Text(
+  //       "Simpan",
+  //       style: TextStyle(color: Color(0xFF0F82FF)),
+  //     ),
+  //     content: Text("Simpan Perubahan?"),
+  //     actions: [
+  //       ElevatedButton(
+  //         onPressed: () {
+  //           print
+  //         })
+  //     ],
+  //   );
+  // }
 
   Widget bottomSheet() {
     return Container(
