@@ -99,14 +99,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
-                                    width: 1,
+                                    width: 0,
                                   ),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
-                                    width: 1,
+                                    width: 0,
                                   ),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
@@ -262,62 +262,62 @@ class _LoginWidgetState extends State<LoginWidget> {
                               color: Colors.black,
                             ),
                           ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(8, 4, 8, 4),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF090F13),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 5,
+                                        color: Color(0x3314181B),
+                                        offset: Offset(0, 2),
+                                      )
+                                    ],
+                                    shape: BoxShape.circle,
+                                  ),
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: FaIcon(
+                                    FontAwesomeIcons.google,
+                                    color: Colors.white,
+                                    size: 24,
+                                  ),
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF090F13),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 5,
+                                        color: Color(0x3314181B),
+                                        offset: Offset(0, 2),
+                                      )
+                                    ],
+                                    shape: BoxShape.circle,
+                                  ),
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: FaIcon(
+                                    FontAwesomeIcons.facebookF,
+                                    color: Colors.white,
+                                    size: 24,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ],
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF090F13),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 5,
-                            color: Color(0x3314181B),
-                            offset: Offset(0, 2),
-                          )
-                        ],
-                        shape: BoxShape.circle,
-                      ),
-                      alignment: AlignmentDirectional(0, 0),
-                      child: FaIcon(
-                        FontAwesomeIcons.google,
-                        color: Colors.white,
-                        size: 24,
-                      ),
-                    ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF090F13),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 5,
-                            color: Color(0x3314181B),
-                            offset: Offset(0, 2),
-                          )
-                        ],
-                        shape: BoxShape.circle,
-                      ),
-                      alignment: AlignmentDirectional(0, 0),
-                      child: FaIcon(
-                        FontAwesomeIcons.facebookF,
-                        color: Colors.white,
-                        size: 24,
-                      ),
-                    ),
-                  ],
-                ),
               ),
             ],
           ),
