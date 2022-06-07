@@ -172,7 +172,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                             child: TextFormField(
                               controller: passwordController,
                               obscureText: !passwordVisibility,
@@ -230,11 +230,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                             child: ElevatedButton(
                                 onPressed: () {
                                   FirebaseAuth.instance
-                                      .signInWithEmailAndPassword(
+                                      .createUserWithEmailAndPassword(
                                           email: emailController.text,
                                           password: passwordController.text)
                                       .then((value) {

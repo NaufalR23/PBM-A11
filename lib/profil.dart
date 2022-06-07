@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pbma11/Login.dart';
 import 'package:pbma11/edit%20profil.dart';
 import 'package:pbma11/main.dart';
 import 'package:pbma11/maps.dart';
@@ -467,7 +468,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => MyApp()));
+                                          builder: (context) => LoginWidget()));
                                 });
                               },
                               child: Icon(
