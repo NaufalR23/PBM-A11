@@ -49,7 +49,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                           'assets/Group 2.png',
                           width: 150,
                           height: 150,
-                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -84,17 +83,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 controller: emailController,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Email',
+                                  hintText: 'Username',
                                   labelStyle: TextStyle(
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF95A1AC),
-                                    fontSize: 14,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.normal,
                                   ),
                                   hintStyle: TextStyle(
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF95A1AC),
-                                    fontSize: 14,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.normal,
                                   ),
                                   enabledBorder: OutlineInputBorder(
@@ -102,14 +101,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       color: Color(0x00000000),
                                       width: 0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(40),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(40),
                                   ),
                                   filled: true,
                                   fillColor: Colors.white,
@@ -127,6 +126,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               child: TextFormField(
+                                keyboardType: TextInputType.visiblePassword,
+                                validator: (password) => password != null && password.length < 5
+                                    ? 'Enter the min 5 password'
+                                    : null,
                                 controller: passwordController,
                                 obscureText: !passwordVisibility,
                                 decoration: InputDecoration(
@@ -134,13 +137,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   labelStyle: TextStyle(
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF95A1AC),
-                                    fontSize: 14,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.normal,
                                   ),
                                   hintStyle: TextStyle(
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF95A1AC),
-                                    fontSize: 14,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.normal,
                                   ),
                                   enabledBorder: OutlineInputBorder(
@@ -148,14 +151,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       color: Color(0x00000000),
                                       width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(40),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(40),
                                   ),
                                   filled: true,
                                   fillColor: Colors.white,
@@ -182,21 +185,29 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                      minimumSize: Size(170, 40),
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(8)),
-                                      primary: Color.fromARGB(255, 15, 130, 255)),
-                                  child: const Text(
-                                    "Lupa Password?",
-                                    style: TextStyle(
-                                        fontSize: 14, fontFamily: "Poppins"),
-                                  )),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) {
+                                            return SignUpWidget();
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    child: const Text(
+                                      'Lupa Password?',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.white),
+                                    )),
+                              ],
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
@@ -219,15 +230,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
-                                      minimumSize: Size(300, 50),
+                                      minimumSize: Size(180, 50),
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(50)),
                                       primary: Color(0xFF20C763)),
                                   child: const Text(
-                                    "Login",
+                                    "LOGIN",
                                     style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 20,
                                         fontFamily: "Poppins",
                                         color: Colors.white),
                                   )),
@@ -248,23 +259,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       );
                                     },
                                     child: const Text(
-                                      'Tidak Punya Akun?',
+                                      'Tidak Punya Akun? SIGN UP',
                                       style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.w400,
-                                          color: Colors.white),
+                                          color: Colors.black),
                                     )),
                               ],
                             ),
                             Text(
-                              '-----OR-----',
+                              '------OR------',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(8, 4, 8, 4),
+                              padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
