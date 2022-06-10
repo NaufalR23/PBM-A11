@@ -36,7 +36,7 @@ class _BottomWidgetState extends State<BottomWidget> {
           ),
           child: NavigationBar(
             height: 60,
-            backgroundColor: Color.fromARGB(255, 15, 130, 255),
+            backgroundColor: Colors.white,
             selectedIndex: index,
             onDestinationSelected: (index) =>
                 setState(() => this.index = index),

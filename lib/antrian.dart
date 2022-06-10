@@ -47,7 +47,7 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
@@ -59,7 +59,7 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: Container(
                   width: 430,
-                  height: 493,
+                  height: 609.22,
                   decoration: BoxDecoration(
                     color: Color(0xFFEEEEEE),
                     borderRadius: BorderRadius.only(

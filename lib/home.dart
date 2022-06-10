@@ -102,8 +102,9 @@ class _HomeWidgetState extends State<HomeWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                 child: Container(
-                  width: 430,
-                  height: 430,
+                  width: MediaQuery.of(context).size.width,
+                  height: double.infinity,
+                  // height: 542.2,
                   decoration: BoxDecoration(
                     color: Color(0xFFEEEEEE),
                     borderRadius: BorderRadius.only(
