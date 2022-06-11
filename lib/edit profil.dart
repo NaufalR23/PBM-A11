@@ -237,7 +237,9 @@ class _EditWidgetState extends State<EditWidget> {
               padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
               child: RoundedButton(
                 text: "Simpan",
-                press: () {},
+                press: () {
+                  offer(context);
+                },
               ),
             ),
           ],
@@ -246,21 +248,38 @@ class _EditWidgetState extends State<EditWidget> {
     ));
   }
 
-  // void offer(BuildContext context) {
-  //   var alertDialog = AlertDialog(
-  //     title: Text(
-  //       "Simpan",
-  //       style: TextStyle(color: Color(0xFF0F82FF)),
-  //     ),
-  //     content: Text("Simpan Perubahan?"),
-  //     actions: [
-  //       ElevatedButton(
-  //         onPressed: () {
-  //           print
-  //         })
-  //     ],
-  //   );
-  // }
+  void offer(BuildContext context) {
+    var alertDialog = AlertDialog(
+      title: Text(
+        "Simpan",
+        style: TextStyle(color: Color(0xFF0F82FF)),
+      ),
+      content: Text("Simpan Perubahan?"),
+      actions: [
+        ElevatedButton(
+          onPressed: () {
+            print("Test");
+          },
+          child: Text(
+            "Ya",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(
+            "Tidak",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        )
+      ],
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alertDialog;
+        });
+  }
 
   Widget bottomSheet() {
     return Container(
