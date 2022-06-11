@@ -4,7 +4,8 @@ import 'package:pbma11/main.dart';
 import 'package:pbma11/notifikasi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:pbma11/page/details.dart';
+import 'package:pbma11/page/tambahDetail.dart';
+// import 'package:pbma11/page/details.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -143,7 +144,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             context, 
                                             MaterialPageRoute(
                                               builder: (_) {
-                                                return const DetailPage();
+                                                return TambahDetail();
                                               },
                                             )
                                           );

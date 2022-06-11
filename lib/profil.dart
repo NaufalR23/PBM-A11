@@ -39,21 +39,23 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: Colors.white,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                    // clipBehavior: Clip.antiAliasWithSaveLayer,
+                    // color: Colors.white,
+                    // elevation: 0,
+                    // shape: RoundedRectangleBorder(
+                    //   borderRadius: BorderRadius.circular(8),
+                    // ),
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
                         child: Image.asset(
                           "assets/images/profile.png",
-                          width: 80,
-                          height: 80,
-                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -67,7 +69,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '[Username]',
+                            'Username',
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Colors.white,
@@ -78,7 +80,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
-                              '[Email_Address]',
+                              'Email_Address',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 color: Color(0xB4FFFFFF),
