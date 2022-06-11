@@ -36,7 +36,7 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
-                          'assets/profil.png',
+                          'assets/images/profile.png',
                         ),
                       ),
                     ),

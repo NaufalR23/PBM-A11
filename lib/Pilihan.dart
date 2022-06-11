@@ -16,7 +16,7 @@ class Pilihan extends StatelessWidget {
             child: Column(
           children: [
             const SizedBox(height: 50),
-            Container(child: Image.asset('assets/Group 2.png')),
+            Container(child: Image.asset('assets/images/Group 2.png')),
             Container(
                 alignment: Alignment.center,
                 child: const Align(

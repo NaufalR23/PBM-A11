@@ -48,7 +48,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                         child: Image.asset(
-                          'assets/Group 2.png',
+                          'assets/images/Group 2.png',
                           width: 150,
                           height: 150,
                         ),

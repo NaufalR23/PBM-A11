@@ -60,7 +60,7 @@ class _EditWidgetState extends State<EditWidget> {
                                 height: 250,
                                 fit: BoxFit.cover,
                               )
-                            : Image.asset("assets/profil.png"),
+                            : Image.asset("assets/images/profile.png"),
                       ),
                       backgroundColor: Colors.white,
                     ),

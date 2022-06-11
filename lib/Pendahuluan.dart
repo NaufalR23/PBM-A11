@@ -16,11 +16,11 @@ class Pendahuluan extends StatelessWidget {
             child: Column(
           children: [
             Container(
-              child: Image.asset('assets/Vektor 1.png'),
+              child: Image.asset('assets/images/Vektor 1.png'),
               alignment: const Alignment(1, 0),
             ),
             Container(
-              child: Image.asset('assets/Group 2.png'),
+              child: Image.asset('assets/images/Group 2.png'),
             ),
             Container(
                 alignment: Alignment.center,
@@ -71,7 +71,8 @@ class Pendahuluan extends StatelessWidget {
                   child: const Text(
                     "Mulai",
                     style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
-                  )),
+                  )
+                ),
             ),
           ],
         )),

@@ -50,7 +50,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          "assets/profil.png",
+                          "assets/images/profile.png",
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,

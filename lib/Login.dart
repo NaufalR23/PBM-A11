@@ -46,7 +46,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
                         child: Image.asset(
-                          'assets/Group 2.png',
+                          'assets/images/Group 2.png',
                           width: 150,
                           height: 150,
                         ),

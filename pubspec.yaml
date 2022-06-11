@@ -85,17 +85,36 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/Group 2.png
-    - assets/Vektor 1.png
-    - assets/Vector 2.png
-    - assets/bawah.png
-    - assets/laundry 1.png
-    - assets/laundry-basket 1.png
-    - assets/test1.png
-    - assets/test2.png
-    - assets/profil.png
-    - assets/Vector_7.png
-    - assets/user.png
+    - assets/images/Group 2.png
+    - assets/images/Vektor 1.png
+    - assets/images/Vector 2.png
+    - assets/images/bawah.png
+    - assets/images/laundry.png
+    - assets/images/laundry-basket.png
+    - assets/images/test1.png
+    - assets/images/test2.png
+    - assets/images/profile.png
+    - assets/images/Vector_7.png
+    - assets/images/user.png
+    - assets/images/iron.png
+    - assets/images/drying.png
+    - assets/images/baju.png
+    - assets/images/dress.png
+    - assets/images/jacket.png
+    - assets/images/mukenah.png
+    - assets/images/trousers.png
+    - assets/images/success.png
+    - assets/images/transfer-money.png
+    - assets/images/checklist.png
+    - assets/images/deliver.png
+    - assets/images/delivered.png
+    - assets/images/dollar.png
+    - assets/images/Logo Bank BCA.png
+    - assets/images/Logo bank BNI.png
+    - assets/images/BRI.png
+    - assets/images/mandiri.png
+    - assets/images/meeting-point.png
+    - assets/images/blanket.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
