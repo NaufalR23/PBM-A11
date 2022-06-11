@@ -98,8 +98,25 @@ class _EditWidgetState extends State<EditWidget> {
                       color: Colors.black,
                       size: 24,
                     ),
-                    hintText: "test",
-                    labelText: "Username"),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0,
+                      ),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0,
+                      ),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding:
+                        EdgeInsetsDirectional.fromSTEB(24, 20, 24, 20),
+                    hintText: "username"),
               ),
             ),
             Container(
@@ -111,8 +128,25 @@ class _EditWidgetState extends State<EditWidget> {
                       color: Colors.black,
                       size: 24,
                     ),
-                    hintText: "test123@gmail.com",
-                    labelText: "Email"),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0,
+                      ),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0,
+                      ),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding:
+                        EdgeInsetsDirectional.fromSTEB(24, 20, 24, 20),
+                    hintText: "email"),
               ),
             ),
             Container(
@@ -125,8 +159,25 @@ class _EditWidgetState extends State<EditWidget> {
                     color: Colors.black,
                     size: 24,
                   ),
-                  hintText: "**********",
-                  labelText: "Password",
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 0,
+                    ),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 0,
+                    ),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding:
+                      EdgeInsetsDirectional.fromSTEB(24, 20, 24, 20),
+                  hintText: "password",
                   suffixIcon: IconButton(
                     icon: Icon(
                       Icons.visibility,
@@ -149,8 +200,25 @@ class _EditWidgetState extends State<EditWidget> {
                       color: Colors.black,
                       size: 24,
                     ),
-                    hintText: "test",
-                    labelText: "Alamat"),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0,
+                      ),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0,
+                      ),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding:
+                        EdgeInsetsDirectional.fromSTEB(24, 20, 24, 20),
+                    hintText: "alamat"),
               ),
             ),
             Container(
