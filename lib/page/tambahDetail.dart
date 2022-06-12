@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbma11/page/Tambahan.dart';
 import 'package:pbma11/page/detailPesanan.dart';
 
 // class OrderPage extends StatelessWidget {
@@ -45,7 +46,7 @@ class _TambahDetailState extends State<TambahDetail> {
               child: Container(
                 padding: EdgeInsets.all(5),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height*0.83,
+                height: MediaQuery.of(context).size.height*0.8564,
                 decoration: BoxDecoration(
                   color: Color(0xFFEEEEEE),
                   borderRadius: BorderRadius.only(
@@ -71,58 +72,104 @@ class _TambahDetailState extends State<TambahDetail> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 5,),
-                    InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPesanan()));
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(0),
-                        width: 320,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
-                          child: Text("Tambahan", 
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'Poppins',
-                            fontSize: 22,
-                            // fontWeight: FontWeight.w700
+                    SizedBox(height: 35,),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Container(
+                              width: 320,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 0,
+                                ),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Tambahan',
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        color: Color(0xFF090F13),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                                      child: GestureDetector(
+                                        onTap: () async {
+                                          await Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => TambahanWidget(),
+                                            ),
+                                          );
+                                        },
+                                        child: Icon(
+                                          Icons.chevron_right_rounded,
+                                          color: Colors.grey,
+                                          size: 40,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
-                        )
+                        ],
                       ),
                     ),
                     SizedBox(height: 5,),
-                    InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPesanan()));
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(0),
-                        width: 320,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Center(
-                          child: Text("Selesai", 
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Poppins',
-                            fontSize: 22,
-                            fontWeight: FontWeight.w700
+                    Container(
+                      padding: const EdgeInsets.all(15),
+                      width: 355,
+                      height: 80,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) {
+                                  return const TambahanWidget();
+                                },
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.only(
+                                  left: 50, right: 50, top: 5, bottom: 5),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50)),
+                              primary: const Color.fromARGB(255, 32, 199, 99)),
+                          child: const Text(
+                            "Selesai",
+                            style: TextStyle(
+                              fontSize: 25, 
+                              fontFamily: "Poppins"
                             ),
                           ),
-                        )
-                      ),
+                        ),
                     ),
-                  SizedBox(height: 35,)
+                  SizedBox(height: 10,),
                 ]
               ),
             ),
@@ -151,7 +198,7 @@ class _TambahDetailState extends State<TambahDetail> {
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(0),
                       image: DecorationImage(
                           image: AssetImage('assets/images/$img.png')
                       )
@@ -251,37 +298,24 @@ class _TambahDetailState extends State<TambahDetail> {
     return Column(
       children: [
         Material(
-          color: Colors.transparent,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          // height: 70,
-          // width: 70,
-          // decoration: BoxDecoration(
-          //   color: Colors.black,
-          //   shape: BoxShape.circle,
-          // ),
-          // child: Center(
-            child: Container(
-              width: 40,
-              height: 40,
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-                // border: Border.all(
-                //   color: Colors.white,
-                //   width: 0,
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/$img.png'),
-                      // fit: BoxFit.contain
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child : Container(
+            margin: const EdgeInsets.only(bottom: 12),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(12)),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                  Image.asset(
+                    'assets/images/$img.png',
+                    width: 48,
                   ),
-                )
+                ]
               ),
-            // ),
+            ),
           ),
-        // ),
+        ),
         Text(name, style: headingStyle)
       ],
     );
