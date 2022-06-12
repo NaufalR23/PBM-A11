@@ -24,7 +24,7 @@ class _TambahDetailState extends State<TambahDetail> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color.fromARGB(255, 15, 130, 255),
-      body: SingleChildScrollView(
+      body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -43,9 +43,9 @@ class _TambahDetailState extends State<TambahDetail> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
               child: Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
+                height: MediaQuery.of(context).size.height*0.83,
                 decoration: BoxDecoration(
                   color: Color(0xFFEEEEEE),
                   borderRadius: BorderRadius.only(
@@ -71,22 +71,50 @@ class _TambahDetailState extends State<TambahDetail> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 5,),
                     InkWell(
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPesanan()));
                       },
                       child: Container(
-                        padding: EdgeInsets.all(20),
-                        height: 70,
+                        padding: EdgeInsets.all(0),
+                        width: 320,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                          child: Text("Tambahan", 
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Poppins',
+                            fontSize: 22,
+                            // fontWeight: FontWeight.w700
+                            ),
+                          ),
+                        )
+                      ),
+                    ),
+                    SizedBox(height: 5,),
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPesanan()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(0),
+                        width: 320,
+                        height: 50,
                         decoration: BoxDecoration(
                           color: Colors.green,
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(50),
                         ),
                         child: Center(
                           child: Text("Selesai", 
                           style: TextStyle(
                             color: Colors.white,
+                            fontFamily: 'Poppins',
                             fontSize: 22,
                             fontWeight: FontWeight.w700
                             ),
@@ -94,7 +122,7 @@ class _TambahDetailState extends State<TambahDetail> {
                         )
                       ),
                     ),
-                  SizedBox(height: 20,)
+                  SizedBox(height: 35,)
                 ]
               ),
             ),
@@ -107,19 +135,19 @@ class _TambahDetailState extends State<TambahDetail> {
   Container clothWidget(String img, String name, int price)
   {
     return Container(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-      width: MediaQuery.of(context).size.width*0.85,
+      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+      width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
           Container(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width*0.85,
-                  height: 70,
+                  width: 60,
+                  height: 60,
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -129,7 +157,9 @@ class _TambahDetailState extends State<TambahDetail> {
                       )
                   ),
                 ),
-                Column(
+                Container(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+                  child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("$name", 
@@ -143,10 +173,10 @@ class _TambahDetailState extends State<TambahDetail> {
                       fontFamily: 'Poppins',
                       color: Colors.red,
                       fontSize: 18,
-                    ),
+                        ),
+                      ),
+                    ],
                   ),
-                    
-                  ],
                 ),
                 Row(
                   children: [
@@ -232,10 +262,10 @@ class _TambahDetailState extends State<TambahDetail> {
           //   color: Colors.black,
           //   shape: BoxShape.circle,
           // ),
-          child: Center(
+          // child: Center(
             child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 60,
+              width: 40,
+              height: 40,
               margin: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -245,11 +275,11 @@ class _TambahDetailState extends State<TambahDetail> {
                 //   width: 0,
                   image: DecorationImage(
                       image: AssetImage('assets/images/$img.png'),
-                      fit: BoxFit.contain
+                      // fit: BoxFit.contain
                   ),
                 )
               ),
-            ),
+            // ),
           ),
         // ),
         Text(name, style: headingStyle)

@@ -72,7 +72,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
-                      child: SingleChildScrollView(
+                      // child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -327,7 +327,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                           ],
                         ),
-                      ),
+                      // ),
                     ),
                   ],
                 ),

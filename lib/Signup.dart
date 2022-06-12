@@ -7,6 +7,7 @@ import 'package:pbma11/main.dart';
 import 'package:pbma11/Signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/single_child_widget.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({Key? key}) : super(key: key);
@@ -33,8 +34,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFF0F82FF),
-      body: SafeArea(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
             child: Column(
@@ -66,8 +67,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                       child: Container(
-                        width: 700,
-                        height: 700,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height*0.66,
                         decoration: BoxDecoration(
                           color: Color(0xFFEEEEEE),
                           borderRadius: BorderRadius.only(
@@ -77,7 +78,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             topRight: Radius.circular(30),
                             ),
                           ),
-                        child: SingleChildScrollView(
+                        // child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -246,7 +247,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    BottomWidget()));
+                                                    LoginWidget()));
                                       }).onError(
                                         (error, stackTrace) {
                                           print("error ${error.toString()}");
@@ -352,7 +353,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               ),
                             ],
                           ),
-                        ),
+                        // ),
                       ),
                     ),
                   ]
