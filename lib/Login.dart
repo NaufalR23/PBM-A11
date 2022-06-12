@@ -6,6 +6,7 @@ import 'package:pbma11/main.dart';
 import 'package:pbma11/Signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pbma11/page/lupa_password.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({Key? key}) : super(key: key);
@@ -195,7 +196,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (_) {
-                                            return SignUpWidget();
+                                            return ChangePw();
                                           },
                                         ),
                                       );

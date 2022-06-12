@@ -183,17 +183,33 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        Image.asset(
-                                          'assets/images/laundry-basket.png',
-                                          width: 150,
-                                          height: 180,
-                                          fit: BoxFit.scaleDown,
-                                        ),
-                                        Text(
-                                          'Cuci Kering',
-                                          style: TextStyle(
-                                            fontFamily: 'Poppins',
-                                            fontWeight: FontWeight.bold,
+                                        GestureDetector(
+                                        onTap: (){
+                                          Navigator.push(
+                                            context, 
+                                            MaterialPageRoute(
+                                              builder: (_) {
+                                                return TambahDetail();
+                                              },
+                                            )
+                                          );
+                                        },
+                                        child: Column(
+                                          children : [
+                                          Image.asset(
+                                            'assets/images/laundry-basket.png',
+                                            width: 150,
+                                            height: 180,
+                                            fit: BoxFit.scaleDown,
+                                          ),
+                                          Text(
+                                            'Cuci Kering',
+                                            style: TextStyle(
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                            ],
                                           ),
                                         ),
                                       ],
@@ -212,17 +228,33 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        Image.asset(
-                                          'assets/images/iron.png',
-                                          width: 150,
-                                          height: 180,
-                                          fit: BoxFit.scaleDown,
-                                        ),
-                                        Text(
-                                          'Setrika',
-                                          style: TextStyle(
-                                            fontFamily: 'Poppins',
-                                            fontWeight: FontWeight.bold,
+                                        GestureDetector(
+                                        onTap: (){
+                                          Navigator.push(
+                                            context, 
+                                            MaterialPageRoute(
+                                              builder: (_) {
+                                                return TambahDetail();
+                                              },
+                                            )
+                                          );
+                                        },
+                                        child: Column(
+                                          children : [
+                                          Image.asset(
+                                            'assets/images/iron.png',
+                                            width: 150,
+                                            height: 180,
+                                            fit: BoxFit.scaleDown,
+                                          ),
+                                          Text(
+                                            'Setrika',
+                                            style: TextStyle(
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],
@@ -241,6 +273,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
+                                        GestureDetector(
+                                        onTap: (){
+                                          Navigator.push(
+                                            context, 
+                                            MaterialPageRoute(
+                                              builder: (_) {
+                                                return TambahDetail();
+                                              },
+                                            )
+                                          );
+                                        },
+                                        child: Column(
+                                          children : [
                                         Image.asset(
                                           'assets/images/drying.png',
                                           width: 150,
@@ -252,6 +297,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           style: TextStyle(
                                             fontFamily: 'Poppins',
                                             fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],
