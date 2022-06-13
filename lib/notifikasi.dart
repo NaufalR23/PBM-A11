@@ -23,12 +23,15 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
-                  'Notifikasi',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    color: Colors.white,
-                    fontSize: 25,
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child: Text(
+                    'Notifikasi',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
                   ),
                 ),
                 Padding(
@@ -50,7 +53,7 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                       children: [
                         Expanded(
                           child: ListView(
-                            padding: EdgeInsets.zero,
+                            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 12, 0),
                             scrollDirection: Axis.vertical,
                             children: [
                               ListTile(
@@ -58,14 +61,14 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 20,
+                                    fontSize: 22,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 12,
+                                    fontSize: 15,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),
@@ -84,14 +87,14 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 20,
+                                    fontSize: 22,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 12,
+                                    fontSize: 15,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),
@@ -105,14 +108,14 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 20,
+                                    fontSize: 22,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 12,
+                                    fontSize: 15,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),
@@ -126,14 +129,14 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 20,
+                                    fontSize: 22,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 12,
+                                    fontSize: 15,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),

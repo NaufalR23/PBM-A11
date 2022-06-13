@@ -208,10 +208,10 @@ class _TambahDetailState extends State<TambahDetail> {
               children: [
                 Image.asset(
                     'assets/images/$img.png',
-                    width: 50,
+                    width: 60,
                   ),
                 Container(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 15, 70, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 15, 60, 0),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -325,7 +325,7 @@ class _TambahDetailState extends State<TambahDetail> {
               children: [
                   Image.asset(
                     'assets/images/$img.png',
-                    width: 50,
+                    width: 60,
                   ),
                 ]
               ),
