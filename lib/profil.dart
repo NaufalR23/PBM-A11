@@ -51,9 +51,9 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                         width: 60,
                         height: 60,
                         clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
                         child: Image.asset(
                           "assets/images/profile.png",
                         ),
@@ -257,7 +257,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Notification Settings',
+                            'Atur Notifikasi',
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
@@ -322,11 +322,11 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Terms of Services',
+                            'Atur Bahasa',
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -391,7 +391,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -456,7 +456,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Color(0xFF090F13),
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
