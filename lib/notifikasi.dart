@@ -72,14 +72,14 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                               "Pilih Tanggal",
                               style: TextStyle(
                                   fontFamily: "Poppins",
-                                  color: Colors.black,
+                                  color: Colors.red,
                                   fontSize: 20),
                             ),
                           ),
                         ),
                         Expanded(
                           child: ListView(
-                            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 12, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 12, 0),
                             scrollDirection: Axis.vertical,
                             children: [
                               ListTile(
