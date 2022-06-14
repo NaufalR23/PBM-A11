@@ -34,9 +34,6 @@ class _EditWidgetState extends State<EditWidget> {
       body: Container(
         padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: ListView(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               "Edit Profile",
@@ -318,10 +315,4 @@ class _EditWidgetState extends State<EditWidget> {
           ],
         ));
   }
-  // void takePhoto(ImageSource source) async {
-  //   final pickedFile = await _picker.pickImage(source: source);
-  //   setState(() {
-  //     _imageFile = pickedFile;
-  //   });
-  // }
 }
