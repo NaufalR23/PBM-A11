@@ -5,11 +5,11 @@ class TambahanWidget extends StatefulWidget {
   const TambahanWidget({Key? key}) : super(key: key);
 
   @override
-  State<TambahanWidget> createState() => _DetailPesananState();
+  _TambahanWidgetState createState() => _TambahanWidgetState();
   
 }
 
-class _DetailPesananState extends State<TambahanWidget> {
+class _TambahanWidgetState extends State<TambahanWidget> {
   Map<String, Map<String, int>> order = {
     "Putih": {'price': 500, 'total': 0},
     "Luntur": {'price': 500, 'total': 0}
@@ -59,7 +59,7 @@ class _DetailPesananState extends State<TambahanWidget> {
                           child: Container(
                             padding: EdgeInsets.fromLTRB(0,20,0,0),
                             width: 333,
-                            height: 80,
+                            height: 60,
                             decoration: BoxDecoration(
                             color: Colors.white, 
                             borderRadius: BorderRadius.only(
@@ -84,12 +84,61 @@ class _DetailPesananState extends State<TambahanWidget> {
                           child: SingleChildScrollView(
                             child: Column(
                               children: [
-                                clothWidget("Putih","Putih",  500),
-                                clothWidget("Luntur","Luntur", 500),
+                                clothWidget("Putih","Putih", 500),
+                                clothWidget("Luntur","Luntur",500),
                               ],
                             ),
                           ),
                         ),
+                        Container(
+                          // // width: 355,
+                          // height: 200,
+                          padding:
+                            EdgeInsetsDirectional.fromSTEB(30, 15, 30, 0),
+                            // height: 200,
+                            child: TextFormField(
+                              maxLines: 8,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                hintText: 'Catatan',
+                                labelStyle: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xFF95A1AC),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                hintStyle: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xFF95A1AC),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(24, 30, 24, 0),
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Color(0xFF0F1113),
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                        ),
+                        SizedBox(height: 45,),
                         Container(
                           width: 355,
                           height: 50,
@@ -133,12 +182,13 @@ class _DetailPesananState extends State<TambahanWidget> {
   }
 }
     Container clothWidget(String name, String type, int price,) {
+      var order;
       return Container(
         padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
         child: Column(
           children: [
           Container(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 30, 0),
             // width: 100,
             height: 80,
             margin: EdgeInsets.all(0),
@@ -155,7 +205,7 @@ class _DetailPesananState extends State<TambahanWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 15, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 15, 150, 0),
                   child: Column(
                       children: [
                         Text("$name", 
@@ -175,10 +225,84 @@ class _DetailPesananState extends State<TambahanWidget> {
                       ]
                     ),
                   ),
+                  GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      // var order;
+                      if (order[name]!['total'] != 0) {
+                        order[name]!['total'] = order[name]!['total']! - 1;
+                      }
+                    });
+                  },
+                  child: Container(
+                      height: 25,
+                      width: 25,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(100),  
+                          border: Border.all(
+                            color: Colors.black
+                          )),
+                      child: Center(
+                          child: Icon(
+                        Icons.remove,
+                        size: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                // SizedBox(
+                //   width: 20,
+                //   child: Center(
+                //     child: Text('${order[name]!['total']}',
+                //         style: TextStyle(
+                //         fontFamily: 'Poppins',
+                //         color: Colors.black,
+                //         fontSize: 25,
+                //         fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //   ),
+                // ),
+                const SizedBox(
+                  width: 8,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      order[name]!['total'] = order[name]!['total']! + 1;
+                      // totalPrice = totalPrice + order[type]!['price']!;
+                    });
+                  },
+                  child: Container(
+                      height: 25,
+                      width: 25,
+                      decoration: BoxDecoration(
+                          color: Colors.white, 
+                          borderRadius: BorderRadius.circular(100),  
+                          border: Border.all(
+                            color: Colors.black
+                          )),
+                      child: Center(
+                          child: Icon(
+                        Icons.add,
+                        size: 16,
+                        color: Colors.grey.shade800,
+                      ),
+                    ),
+                  ),
+                ),  
                 ]
               ),    
             ),
           ]
         ), 
     );
+  }
+  
+  void setState(Null Function() name) {
   }
