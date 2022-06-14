@@ -6,9 +6,15 @@ class TambahanWidget extends StatefulWidget {
 
   @override
   State<TambahanWidget> createState() => _DetailPesananState();
+  
 }
 
 class _DetailPesananState extends State<TambahanWidget> {
+  Map<String, Map<String, int>> order = {
+    "Putih": {'price': 500, 'total': 0},
+    "Luntur": {'price': 500, 'total': 0}
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,19 +26,22 @@ class _DetailPesananState extends State<TambahanWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
-                  '\nTambahan',
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child : Text(
+                    'Tambahan',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                   child: Container(
-                    width: 430,
-                    height: 663.22,
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height*0.888,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
@@ -45,136 +54,72 @@ class _DetailPesananState extends State<TambahanWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Expanded(
-                          child: ListView(
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.vertical,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(40, 40, 40, 0),
-                                padding: EdgeInsets.fromLTRB(10, 20, 10,
-                                    10), //apply padding to all four sides
-                                color: Colors.white,
-
-                                child: Text(
-                                  'Warna Pakaian',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 21, 0, 255),
-                                    fontFamily: 'Poppins',
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
-                                color: Colors.white,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: ListTile(
-                                        title: Text(
-                                          'Putih',
-                                          style: TextStyle(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.black,
-                                            fontSize: 23,
-                                          ),
-                                        ),
-                                        subtitle: Text(
-                                          'Rp.500',
-                                          style: TextStyle(color: Colors.red),
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Icon(Icons.plus_one),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
-                                color: Colors.white,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: ListTile(
-                                        title: Text(
-                                          'Luntur',
-                                          style: TextStyle(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.black,
-                                            fontSize: 23,
-                                          ),
-                                        ),
-                                        subtitle: Text(
-                                          'Rp.500',
-                                          style: TextStyle(color: Colors.red),
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Icon(Icons.plus_one),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                margin: EdgeInsets.fromLTRB(40, 20, 40, 20),
-                                color: Colors.white,
-                                child: Text(
-                                    'catatan blablabla \n lupa cara ngetik'),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(40, 20, 40, 20),
-                                width: 200,
-                                height: 45,
-                                child: TextButton(
-                                  style: TextButton.styleFrom(
-                                    backgroundColor:
-                                        Color.fromARGB(255, 46, 198, 51),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (_) {
-                                          return const DetailPesanan();
-                                        },
-                                      ),
-                                    );
-                                  },
-                                  child: Text(
-                                    "Selesai",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              ListTile(
-                                tileColor: Color(0xFFF5F5F5),
-                                dense: false,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
-                                  ),
-                                ),
-                              ),
-                            ],
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(0, 30, 0,0),
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(0,20,0,0),
+                            width: 333,
+                            height: 80,
+                            decoration: BoxDecoration(
+                            color: Colors.white, 
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(0),
+                              bottomRight: Radius.circular(0),
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30),
+                            ),
+                          ), //apply padding to all four sides
+                          child: Text(
+                            'Warna Pakaian',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color(0xFF197BFF),
+                              fontFamily: 'Poppins',
+                              fontSize: 25,
+                            ),
                           ),
                         ),
+                        ),
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                clothWidget("Putih","Putih",  500),
+                                clothWidget("Luntur","Luntur", 500),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 355,
+                          height: 50,
+                          child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) {
+                                      return const DetailPesanan();
+                                    },
+                                  ),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  padding: const EdgeInsets.only(
+                                      left: 50, right: 50, top: 5, bottom: 0),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  primary: const Color.fromARGB(255, 32, 199, 99)),
+                              child: const Text(
+                                "Selesai",
+                                style: TextStyle(
+                                  fontSize: 25, 
+                                  fontFamily: "Poppins"
+                                ),
+                              ),
+                            ),
+                          ),
+                        SizedBox(height: 150,),
                       ],
                     ),
                   ),
@@ -187,3 +132,53 @@ class _DetailPesananState extends State<TambahanWidget> {
     );
   }
 }
+    Container clothWidget(String name, String type, int price,) {
+      return Container(
+        padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
+        child: Column(
+          children: [
+          Container(
+            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+            // width: 100,
+            height: 80,
+            margin: EdgeInsets.all(0),
+            decoration: BoxDecoration(
+              color: Colors.white, 
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(0),
+                bottomRight: Radius.circular(0),
+                topLeft: Radius.circular(0),
+                topRight: Radius.circular(0),
+              ),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 15, 0, 0),
+                  child: Column(
+                      children: [
+                        Text("$name", 
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            color: Colors.black,
+                            fontSize: 18,
+                            ),
+                          ),
+                        Text("Rp.$price", 
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          color: Colors.red,
+                          fontSize: 18,
+                          ),
+                        ),
+                      ]
+                    ),
+                  ),
+                ]
+              ),    
+            ),
+          ]
+        ), 
+    );
+  }
