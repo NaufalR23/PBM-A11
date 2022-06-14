@@ -159,7 +159,7 @@ class _TambahDetailState extends State<TambahDetail> {
                               context,
                               MaterialPageRoute(
                                 builder: (_) {
-                                  return const TambahanWidget();
+                                  return const DetailPesanan();
                                 },
                               ),
                             );
