@@ -21,13 +21,16 @@ class _DetailPesananState extends State<DetailPesanan> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
-                  '\nDetail Pesanan',
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child : Text(
+                    'Detail Pesanan',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                    ),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),

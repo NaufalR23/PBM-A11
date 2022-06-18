@@ -3,9 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pbma11/bottomnavigator.dart';
 import 'package:pbma11/home.dart';
 import 'package:pbma11/main.dart';
-import 'package:pbma11/Signup.dart';
+// import 'package:pbma11/Signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pbma11/page/Register.dart';
 import 'package:pbma11/page/lupa_password.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -255,7 +256,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (_) {
-                                          return SignUpWidget();
+                                          return RegisterPage();
                                         },
                                       ),
                                     );

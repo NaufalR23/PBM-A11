@@ -22,6 +22,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     return firebaseApp;
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
         future: _initializeFirebase(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return const Body();
+            return const BodyRegister();
           }
           return const Center(
             child: CircularProgressIndicator(),
@@ -40,14 +41,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   }
 }
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class BodyRegister extends StatefulWidget {
+  const BodyRegister({Key? key}) : super(key: key);
 
   @override
-  State<Body> createState() => _BodyState();
+  State<BodyRegister> createState() => _BodyRegisterState();
 }
 
-class _BodyState extends State<Body> {
+class _BodyRegisterState extends State<BodyRegister> {
   late String _email, _password;
   String? _username, _alamat;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -57,7 +58,6 @@ class _BodyState extends State<Body> {
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _alamatController = TextEditingController();
   late bool passwordVisibility;
-  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -375,10 +375,10 @@ class _BodyState extends State<Body> {
                                 child: const Text(
                                   "Udah Punya Akun?",
                                   style: TextStyle(
-                                      color: Color(0xFF838383),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                      decoration: TextDecoration.underline),
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 20,
+                                  ),
                                 ),
                               ),
 
