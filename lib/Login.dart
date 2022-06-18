@@ -215,36 +215,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             child: ElevatedButton(
-                                onPressed: () {
-                                  FirebaseAuth.instance
-                                      .signInWithEmailAndPassword(
-                                          email: emailController.text,
-                                          password: passwordController.text)
-                                      .then((value) {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                BottomWidget()));
-                                  }).onError(
-                                    (error, stackTrace) {
-                                      print("error ${error.toString()}");
-                                    },
-                                  );
+                                onPressed: () async {
+                                  _doLogin();
                                 },
-                                style: ElevatedButton.styleFrom(
-                                    minimumSize: Size(180, 50),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(50)),
-                                    primary: Color(0xFF20C763)),
-                                child: const Text(
+                                child: Text(
                                   "LOGIN",
                                   style: TextStyle(
-                                      fontSize: 20,
-                                      fontFamily: "Poppins",
-                                      color: Colors.white),
-                                )),
+                                    fontSize: 20,
+                                    fontFamily: "Poppins",
+                                    color: Colors.white),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  minimumSize: Size(180, 50),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  primary: Color(0xFF20C763),
+                                ),
+                              ),
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -331,7 +318,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ],
                       ),
-                      // ),
                     ),
                   ],
                 ),
@@ -342,4 +328,73 @@ class _LoginWidgetState extends State<LoginWidget> {
       ),
     );
   }
+  _doLogin() async {
+    try {
+      var email = emailController.text;
+      var pass = passwordController.text;
+      // var nama = _usernameController;
+      // var alamat = _alamatController;
+
+      print('sedang login');
+      var res = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: pass,
+        // nama : nama,
+        // alamat: alamat,
+      );
+
+      print('Hasil Login : ');
+      print(res);
+
+      await showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: const Text(
+                "Login Berhasil",
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontWeight:
+                        FontWeight.w700,
+                    fontSize: 28),
+              ),
+              content: const Text(
+                "Berhasil Login",
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontWeight:
+                        FontWeight.w400,
+                    fontSize: 16),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pop();
+                  },
+                  child: Text('OK'),
+                )
+              ],
+            ));
+      Navigator.push(context, MaterialPageRoute(builder: (_) {
+        return BottomWidget();
+      }));
+    } catch (e) {
+      print('exception login');
+      print(e.runtimeType);
+      if (e is FirebaseAuthException) {
+        print(e);
+        print(e.message);
+      }
+
+      final snackBar = SnackBar(
+        duration: const Duration(seconds: 5),
+        content: Text("Email atau Password Tidak Boleh Kosong"),
+        backgroundColor: Colors.red,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+  }
 }
+
+
+
