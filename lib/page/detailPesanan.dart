@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:pbma11/home.dart';
 import 'package:pbma11/page/Tambahan.dart';
 
-class DetailPesanan extends StatefulWidget {
-  const DetailPesanan({Key? key}) : super(key: key);
+class Detail extends StatefulWidget {
+  const Detail({Key? key}) : super(key: key);
 
   @override
-  State<DetailPesanan> createState() => _DetailPesananState();
+  State<Detail> createState() => _DetailState();
 }
 
-class _DetailPesananState extends State<DetailPesanan> {
+class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
