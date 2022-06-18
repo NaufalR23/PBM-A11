@@ -21,7 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
     passwordVisibility = false;
   }
 
-  var nama = '';
+  var username = '';
   var alamat = '';
   var email = '';
   var pass = '';
@@ -129,7 +129,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     fontWeight: FontWeight.normal,
                                   ),
                                   onChanged: (v) {
-                                    nama = v;
+                                    username = v;
                                   },
                                 ),
                               ),
@@ -311,7 +311,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   var collection =
                                       FirebaseFirestore.instance.collection('Users');
                                   var res = await collection.add({
-                                    'nama': nama,
+                                    'nama': username,
                                     'email': email,
                                     'alamat': alamat,
                                     'password': pass
@@ -402,13 +402,35 @@ class _RegisterPageState extends State<RegisterPage> {
       print('Hasil Daftar : ');
       print(res);
 
-      final snackBar = SnackBar(
-        duration: const Duration(seconds: 5),
-        content: Text("Registrasi Berhasil, Silakan Login"),
-        backgroundColor: Colors.green,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
+      await showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: const Text(
+                "Telah Berhasil Daftar",
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontWeight:
+                        FontWeight.w700,
+                    fontSize: 28),
+              ),
+              content: const Text(
+                "Akunmu berhasil didaftarkan!",
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontWeight:
+                        FontWeight.w400,
+                    fontSize: 16),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pop();
+                  },
+                  child: Text('OK'),
+                )
+              ],
+            ));
       Navigator.push(context, MaterialPageRoute(builder: (_) {
         return LoginWidget();
       }));
@@ -422,7 +444,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       final snackBar = SnackBar(
         duration: const Duration(seconds: 5),
-        content: Text("Email atau Password Salah"),
+        content: Text("Email atau Password Tidak Boleh Kosong"),
         backgroundColor: Colors.red,
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
