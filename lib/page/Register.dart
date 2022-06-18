@@ -23,11 +23,13 @@ class _RegisterPageState extends State<RegisterPage> {
     passwordVisibility = false;
   }
 
-  var username = '';
+  var nama = '';
   var alamat = '';
   var email = '';
   var pass = '';
 
+  late String _email, _password;
+  String? _username, _alamat;
   var formkey = GlobalKey<FormState>();
 
   @override
@@ -99,6 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                       return null;
                                     }
                                   },
+                                  onSaved: (value) => _username = value!,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText: 'Username',
@@ -134,7 +137,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     fontWeight: FontWeight.normal,
                                   ),
                                   onChanged: (v) {
-                                    username = v;
+                                    nama = v;
                                   },
                                 ),
                               ),
@@ -151,6 +154,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                       return null;
                                     }
                                   },
+                                  onSaved: (value) => _alamat = value!,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText: 'Alamat',
@@ -208,6 +212,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                       return null;
                                     }
                                   },
+                                  onSaved: (value) => _email = value!,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText: 'Email',
@@ -253,7 +258,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                 child: TextFormField(
                                   // showCursor: false,
                                   controller: _passwordController,
-                                  // obscureText: !passwordVisibility,
                                   validator: (value) {
                                     RegExp regex = RegExp(r'^.{6,}$');
                                     if (value!.isEmpty) {
@@ -265,7 +269,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                       return null;
                                     }
                                   },
-                                  obscureText: seePass,
+                                  onSaved: (value) => _password = value!,
+                                  obscureText: !passwordVisibility,
                                   decoration: InputDecoration(
                                     hintText: 'Password',
                                     labelStyle: TextStyle(
@@ -293,31 +298,22 @@ class _RegisterPageState extends State<RegisterPage> {
                                     // enabledBorder: InputBorder.none,
                                     fillColor: Colors.white,
                                     filled: true,
-                                    suffixIcon: IconButton(
-                                      icon: const Icon(
-                                        Icons.visibility,
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            24, 20, 24, 20),
+                                    suffixIcon: InkWell(
+                                      onTap: () => setState(
+                                        () => passwordVisibility =
+                                            !passwordVisibility,
                                       ),
-                                      onPressed: () {
-                                        setState(() {
-                                          seePass = !seePass;
-                                        });
-                                      },
+                                      child: Icon(
+                                        passwordVisibility
+                                            ? Icons.visibility_outlined
+                                            : Icons.visibility_off_outlined,
+                                        color: Color(0xFF95A1AC),
+                                        size: 20,
+                                      ),
                                     ),
-                                    // contentPadding:
-                                    //   EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-                                    // suffixIcon: InkWell(
-                                    //   onTap: () => setState(
-                                    //     () => passwordVisibility =
-                                    //         !passwordVisibility,
-                                    //   ),
-                                    //   child: Icon(
-                                    //     passwordVisibility
-                                    //         ? Icons.visibility_outlined
-                                    //         : Icons.visibility_off_outlined,
-                                    //     color: Color(0xFF95A1AC),
-                                    //     size: 20,
-                                    //   ),
-                                    // ),
                                   ),
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
@@ -337,7 +333,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     var collection = FirebaseFirestore.instance
                                         .collection('Users');
                                     var res = await collection.add({
-                                      'nama': username,
+                                      'nama': nama,
                                       'email': email,
                                       'alamat': alamat,
                                       'password': pass
@@ -430,32 +426,13 @@ class _RegisterPageState extends State<RegisterPage> {
       print('Hasil Daftar : ');
       print(res);
 
-      await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-                title: const Text(
-                  "Telah Berhasil Daftar",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 28),
-                ),
-                content: const Text(
-                  "Akunmu berhasil didaftarkan!",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16),
-                ),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('OK'),
-                  )
-                ],
-              ));
+      final snackBar = SnackBar(
+        duration: const Duration(seconds: 5),
+        content: Text("Registrasi Berhasil, Silakan Login"),
+        backgroundColor: Colors.green,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
       Navigator.push(context, MaterialPageRoute(builder: (_) {
         return LoginWidget();
       }));
@@ -469,7 +446,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       final snackBar = SnackBar(
         duration: const Duration(seconds: 5),
-        content: Text("Email atau Password Tidak Boleh Kosong"),
+        content: Text("Email atau Password Salah"),
         backgroundColor: Colors.red,
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
