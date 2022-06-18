@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:pbma11/home.dart';
 import 'package:pbma11/page/Tambahan.dart';
+import 'package:pbma11/page/metodePembayaran.dart';
+import 'package:pbma11/screens/dashboard_screen.dart';
+import 'package:pbma11/page/opsiPengiriman.dart';
 
-class Detail extends StatefulWidget {
-  const Detail({Key? key}) : super(key: key);
+class DetailPesanan extends StatefulWidget {
+  const DetailPesanan({Key? key}) : super(key: key);
 
   @override
-  State<Detail> createState() => _DetailState();
+  State<DetailPesanan> createState() => _DetailPesananState();
 }
 
-class _DetailState extends State<Detail> {
+class _DetailPesananState extends State<DetailPesanan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,22 +24,19 @@ class _DetailState extends State<Detail> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                  child : Text(
-                    'Detail Pesanan',
-                    style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                    ),
+                Text(
+                  '\nDetail Pesanan',
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height*0.8875,
+                    width: 430,
+                    height: 663.22,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
@@ -139,44 +139,56 @@ class _DetailState extends State<Detail> {
                                   ],
                                 ),
                               ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                                margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                                color: Colors.white,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: ListTile(
-                                        title: Text(
-                                          'Opsi Pengiriman',
-                                          style: TextStyle(
-                                            fontFamily: 'Poppins',
-                                            color:
-                                                Color.fromARGB(255, 8, 0, 255),
-                                            fontSize: 15,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) {
+                                        return opsiPengiriman();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                  margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                  color: Colors.white,
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ListTile(
+                                          title: Text(
+                                            'Opsi Pengiriman',
+                                            style: TextStyle(
+                                              fontFamily: 'Poppins',
+                                              color: Color.fromARGB(
+                                                  255, 8, 0, 255),
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                          subtitle: Text(
+                                            'Dijemput dan diantar',
+                                            style: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 0, 0, 0)),
                                           ),
                                         ),
-                                        subtitle: Text(
-                                          'Dijemput dan diantar',
-                                          style: TextStyle(
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0)),
+                                      ),
+                                      Container(
+                                        child: Text(
+                                          'Rp. 14.000',
+                                          textAlign: TextAlign.right,
                                         ),
                                       ),
-                                    ),
-                                    Container(
-                                      child: Text(
-                                        'Rp. 14.000',
-                                        textAlign: TextAlign.right,
+                                      Container(
+                                        child: Align(
+                                          alignment: Alignment.topRight,
+                                          child: Icon(Icons.arrow_forward_ios),
+                                        ),
                                       ),
-                                    ),
-                                    Container(
-                                      child: Align(
-                                        alignment: Alignment.topRight,
-                                        child: Icon(Icons.arrow_forward_ios),
-                                      ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               Container(
@@ -247,38 +259,50 @@ class _DetailState extends State<Detail> {
                                   ],
                                 ),
                               ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                                margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                                color: Colors.white,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: ListTile(
-                                        title: Text(
-                                          'Metode Pembayaran',
-                                          style: TextStyle(
-                                            fontFamily: 'Poppins',
-                                            color:
-                                                Color.fromARGB(255, 8, 0, 255),
-                                            fontSize: 15,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) {
+                                        return metodePembayaran();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                                  margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                                  color: Colors.white,
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ListTile(
+                                          title: Text(
+                                            'Metode Pembayaran',
+                                            style: TextStyle(
+                                              fontFamily: 'Poppins',
+                                              color: Color.fromARGB(
+                                                  255, 8, 0, 255),
+                                              fontSize: 15,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    Container(
-                                      child: Text(
-                                        'transfer',
-                                        textAlign: TextAlign.right,
+                                      Container(
+                                        child: Text(
+                                          'transfer',
+                                          textAlign: TextAlign.right,
+                                        ),
                                       ),
-                                    ),
-                                    Container(
-                                      child: Align(
-                                        alignment: Alignment.topRight,
-                                        child: Icon(Icons.arrow_forward_ios),
+                                      Container(
+                                        child: Align(
+                                          alignment: Alignment.topRight,
+                                          child: Icon(Icons.arrow_forward_ios),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               Container(
@@ -318,7 +342,7 @@ class _DetailState extends State<Detail> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (_) {
-                                          return const HomeWidget();
+                                          return DashboardScreen();
                                         },
                                       ),
                                     );
