@@ -832,7 +832,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                       borderRadius: BorderRadius.circular(50)),
                                   primary: const Color.fromARGB(255, 32, 199, 99)),
                               child: const Text(
-                                "Prosess",
+                                "Prosess coba",
                                 style: TextStyle(
                                   fontSize: 25, 
                                   fontFamily: "Poppins"

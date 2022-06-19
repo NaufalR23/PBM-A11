@@ -10,7 +10,6 @@ class NotifikasiWidget extends StatefulWidget {
 
 class _NotifikasiWidgetState extends State<NotifikasiWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  late DateTime _dateTime;
 
   @override
   Widget build(BuildContext context) {
@@ -24,22 +23,19 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                  child: Text(
-                    'Notifikasi',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                      fontSize: 25,
-                    ),
+                Text(
+                  'Notifikasi',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                    fontSize: 25,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
-                    width:  400,
-                    height: MediaQuery.of(context).size.height*0.8875,
+                    width: 430,
+                    height: 663.22,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
@@ -49,37 +45,12 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                         topRight: Radius.circular(30),
                       ),
                     ),
-                    child: Container(
-                      child : Column(
-                        children: [ 
-                        Container(
-                          alignment: Alignment.centerRight,
-                          margin: EdgeInsets.only(top: 20, bottom: 0, right: 30),
-                          child: TextButton(
-                            onPressed: () {
-                              showDatePicker(
-                                      context: context,
-                                      initialDate: DateTime.now(),
-                                      firstDate: DateTime(2001),
-                                      lastDate: DateTime(2222))
-                                  .then((date) {
-                                setState(() {
-                                  _dateTime = date!;
-                                });
-                              });
-                            },
-                            child: Text(
-                              "Pilih Tanggal",
-                              style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  color: Colors.red,
-                                  fontSize: 20),
-                            ),
-                          ),
-                        ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
                         Expanded(
                           child: ListView(
-                            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 12, 0),
+                            padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
                             children: [
                               ListTile(
@@ -87,32 +58,40 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),
                                 dense: false,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                ),
                               ),
                               ListTile(
                                 title: Text(
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),
@@ -126,14 +105,14 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),
@@ -147,14 +126,14 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                                   'Promo Laundry',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   ),
                                 ),
                                 subtitle: Text(
                                   'Cek catatan transaksimu dan klaim voucher gratis ongkir dari LAUNDSHIRT',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 tileColor: Color(0xFFF5F5F5),
@@ -168,7 +147,6 @@ class _NotifikasiWidgetState extends State<NotifikasiWidget> {
                         ),
                       ],
                     ),
-                  ),
                   ),
                 ),
               ],

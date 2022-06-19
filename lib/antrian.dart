@@ -48,7 +48,7 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
@@ -59,8 +59,8 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height*0.8875,
+                    width: 430,
+                    height: 609.22,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
@@ -106,10 +106,10 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                           children: [
                                             ListTile(
                                               title: Text(
-                                                'Falijul Rahma | \n(+62) 898-4123-5678\nRp58000',
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
                                                 style: TextStyle(
                                                     fontFamily: 'Poppins',
-                                                    fontSize: 14,
+                                                    fontSize: 11,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -117,35 +117,25 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                                 '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 13,
+                                                  fontSize: 11,
                                                 ),
                                               ),
                                               trailing: Text(
                                                 'Deadline : Jumat, 11/03/2022\nMENUNGGU PEMBAYARAN',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 15,
+                                                  fontSize: 10,
                                                   color: Colors.red,
                                                 ),
                                               ),
                                               dense: false,
-                                            ),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.end,
-                                              children: [
-                                                Container(
-                                                  height: 1,
-                                                  width: MediaQuery.of(context).size.width,
-                                                  color: Colors.grey,
-                                                ),
-                                              ],
                                             ),
                                             ListTile(
                                               title: Text(
-                                                'Falijul Rahma | \n(+62) 898-4123-5678\nRp58000',
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
                                                 style: TextStyle(
                                                     fontFamily: 'Poppins',
-                                                    fontSize: 14,
+                                                    fontSize: 11,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -153,28 +143,44 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                                 '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 13,
+                                                  fontSize: 11,
                                                 ),
                                               ),
                                               trailing: Text(
                                                 'Deadline : Jumat, 11/03/2022\nMENUNGGU PEMBAYARAN',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 15,
+                                                  fontSize: 10,
                                                   color: Colors.red,
                                                 ),
                                               ),
                                               dense: false,
                                             ),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.end,
-                                              children: [
-                                                Container(
-                                                  height: 1,
-                                                  width: MediaQuery.of(context).size.width,
-                                                  color: Colors.grey,
+                                            ListTile(
+                                              title: Text(
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
+                                                style: TextStyle(
+                                                    fontFamily: 'Poppins',
+                                                    fontSize: 11,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              subtitle: Text(
+                                                '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 11,
                                                 ),
-                                              ],
+                                              ),
+                                              trailing: Text(
+                                                'Deadline : Jumat, 11/03/2022\nMENUNGGU PEMBAYARAN',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 10,
+                                                  color: Colors.red,
+                                                ),
+                                              ),
+                                              dense: false,
                                             ),
                                           ],
                                         ),
@@ -184,10 +190,10 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                           children: [
                                             ListTile(
                                               title: Text(
-                                                'Falijul Rahma | \n(+62) 898-4123-5678\nRp58000',
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
                                                 style: TextStyle(
                                                     fontFamily: 'Poppins',
-                                                    fontSize: 14,
+                                                    fontSize: 11,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -195,28 +201,44 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                                 '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 13,
+                                                  fontSize: 11,
                                                 ),
                                               ),
                                               trailing: Text(
                                                 'Deadline : Jumat, 11/03/2022\nSEDANG DIPROSES',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 15,
+                                                  fontSize: 10,
                                                   color: Colors.red,
                                                 ),
                                               ),
                                               dense: false,
                                             ),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.end,
-                                              children: [
-                                                Container(
-                                                  height: 1,
-                                                  width: MediaQuery.of(context).size.width,
-                                                  color: Colors.grey,
+                                            ListTile(
+                                              title: Text(
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
+                                                style: TextStyle(
+                                                    fontFamily: 'Poppins',
+                                                    fontSize: 11,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              subtitle: Text(
+                                                '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 11,
                                                 ),
-                                              ],
+                                              ),
+                                              trailing: Text(
+                                                'Deadline : Jumat, 11/03/2022\nSEDANG DIPROSES',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 10,
+                                                  color: Colors.red,
+                                                ),
+                                              ),
+                                              dense: false,
                                             ),
                                           ],
                                         ),
@@ -226,10 +248,10 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                           children: [
                                             ListTile(
                                               title: Text(
-                                                'Falijul Rahma | \n(+62) 898-4123-5678\nRp58000',
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
                                                 style: TextStyle(
                                                     fontFamily: 'Poppins',
-                                                    fontSize: 14,
+                                                    fontSize: 11,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -237,35 +259,25 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                                 '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 13,
+                                                  fontSize: 11,
                                                 ),
                                               ),
                                               trailing: Text(
                                                 'Deadline : Jumat, 11/03/2022\nSELESAI',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 15,
+                                                  fontSize: 10,
                                                   color: Colors.red,
                                                 ),
                                               ),
                                               dense: false,
-                                            ),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.end,
-                                              children: [
-                                                Container(
-                                                  height: 1,
-                                                  width: MediaQuery.of(context).size.width,
-                                                  color: Colors.grey,
-                                                ),
-                                              ],
                                             ),
                                             ListTile(
                                               title: Text(
-                                                'Falijul Rahma | \n(+62) 898-4123-5678\nRp58000',
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
                                                 style: TextStyle(
                                                     fontFamily: 'Poppins',
-                                                    fontSize: 14,
+                                                    fontSize: 11,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -273,28 +285,44 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                                                 '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 13,
+                                                  fontSize: 11,
                                                 ),
                                               ),
                                               trailing: Text(
                                                 'Deadline : Jumat, 11/03/2022\nSELESAI',
                                                 style: TextStyle(
                                                   fontFamily: 'Poppins',
-                                                  fontSize: 15,
+                                                  fontSize: 10,
                                                   color: Colors.red,
                                                 ),
                                               ),
                                               dense: false,
                                             ),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.end,
-                                              children: [
-                                                Container(
-                                                  height: 1,
-                                                  width: MediaQuery.of(context).size.width,
-                                                  color: Colors.grey,
+                                            ListTile(
+                                              title: Text(
+                                                'Falijul Rahma | (+62) 898-4123-5678\nRp58000',
+                                                style: TextStyle(
+                                                    fontFamily: 'Poppins',
+                                                    fontSize: 11,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              subtitle: Text(
+                                                '3 Baju | 2 Celana\n1 Putih\nNota : 1234567890',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 11,
                                                 ),
-                                              ],
+                                              ),
+                                              trailing: Text(
+                                                'Deadline : Jumat, 11/03/2022\nSELESAI',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 10,
+                                                  color: Colors.red,
+                                                ),
+                                              ),
+                                              dense: false,
                                             ),
                                           ],
                                         ),
@@ -309,16 +337,6 @@ class _AntrianWidgetState extends State<AntrianWidget> {
                       ),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      height: 1,
-                      width: MediaQuery.of(context).size.width*0.75,
-                      color: Colors.grey,
-                    ),
-                  ],
                 ),
               ],
             ),
