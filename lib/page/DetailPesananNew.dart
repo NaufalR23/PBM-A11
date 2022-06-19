@@ -17,7 +17,7 @@ class _DetailPesananState extends State<DetailPesanan> {
     return Scaffold(
       backgroundColor: Color(0xFF197BFF),
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: SafeArea(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
             child: Column(
@@ -38,7 +38,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height*0.8875,
+                    height: MediaQuery.of(context).size.height*0.61,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
@@ -593,7 +593,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -673,52 +673,176 @@ class _DetailPesananState extends State<DetailPesanan> {
                                   ]
                                 ),
                               ),
-                              Container(
-                              padding: const EdgeInsets.all(15),
-                              width: MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height*0.8875,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(0),
-                                  bottomRight: Radius.circular(0),
-                                  topLeft: Radius.circular(30),
-                                  topRight: Radius.circular(30),
-                                ),
-                              ),
-                              child : Container(
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (_) {
-                                            return const DetailPesanan();
-                                          },
-                                        ),
-                                      );
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                        padding: const EdgeInsets.only(left: 50, right: 50, top: 5, bottom: 0),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(50)),
-                                        primary: const Color.fromARGB(255, 32, 199, 99)),
-                                    child: const Text(
-                                      "Proses",
-                                      style: TextStyle(
-                                        fontSize: 25, 
-                                        fontFamily: "Poppins"
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                          // SizedBox(height: 50,),
                             ]
                           ),
                         ),
                       ]
                     ),
+                  ),
+                ),
+                // SizedBox(height : 100),
+                Expanded(
+                  child : Container(
+                    padding: const EdgeInsets.only(left: 40, right: 40, top: 5, bottom: 0),
+                    width: MediaQuery.of(context).size.width,
+                    height : MediaQuery.of(context).size.height*0.30,
+                    // height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(0),
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(0),
+                      ),
+                    ),
+                    child : Padding(
+                      padding: EdgeInsets.zero,
+                      child : ListView(
+                        padding: EdgeInsets.zero,
+                        // mainAxisSize: MainAxisSize.max,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.end,
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          ListTile(
+                            title: Text(
+                            'Subtotal items',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            trailing: Text(
+                              'Rp.50000',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            dense: false,
+                          ),
+                          ListTile(
+                            title: Text(
+                            'Subtotal pengiriman',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            trailing: Text(
+                              'Rp.14000',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            dense: false,
+                          ),
+                          ListTile(
+                            title: Text(
+                            'Tambahan',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            trailing: Text(
+                              'Rp.5000',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            dense: false,
+                          ),
+                          ListTile(
+                            title: Text(
+                            'Voucher',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            trailing: Text(
+                              'Rp.-11000',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            dense: false,
+                          ),
+                          ListTile(
+                            title: Text(
+                            'Total Pembayaran',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            trailing: Text(
+                              'Rp.58000',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.red,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            dense: false,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(15),
+                            width: 355,
+                            height: 72,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) {
+                                      return const DetailPesanan();
+                                    },
+                                  ),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  padding: const EdgeInsets.only(
+                                      left: 50, right: 50, top: 5, bottom: 0),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  primary: const Color.fromARGB(255, 32, 199, 99)),
+                              child: const Text(
+                                "Proses",
+                                style: TextStyle(
+                                  fontSize: 25, 
+                                  fontFamily: "Poppins"
+                                ),
+                              ),
+                            ),
+                          ), 
+                        ],
+                      ),
+                    ),  
                   ),
                 ),
               ]
@@ -729,3 +853,27 @@ class _DetailPesananState extends State<DetailPesanan> {
     );
   }
 }
+
+// Text(
+                            
+//                               ),
+//                             ),
+//                           Text(
+//                             'Tambahan',
+//                             style: TextStyle(
+//                               fontFamily: 'Poppins',
+//                               color: Colors.black,
+//                               fontSize: 20,
+//                               fontWeight: FontWeight.w500,
+//                               ),
+//                             ),
+//                           Text(
+                            
+//                               ),
+//                             ),
+//                           Text(
+                            
+//                               ),
+//                             ),
+
+                          
