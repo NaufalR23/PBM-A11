@@ -5,6 +5,7 @@ import 'package:pbma11/notifikasi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:pbma11/page/tambahDetail.dart';
+import 'package:pbma11/qrCode.dart';
 // import 'package:pbma11/page/details.dart';
 
 class HomeWidget extends StatefulWidget {
@@ -13,7 +14,6 @@ class HomeWidget extends StatefulWidget {
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
 }
-
 
 class _HomeWidgetState extends State<HomeWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -67,7 +67,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => EditWidget(),
+                              builder: (context) => QRCode(),
                             ),
                           );
                         },
@@ -110,7 +110,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height*0.65,
+                  height: MediaQuery.of(context).size.height * 0.65,
                   decoration: BoxDecoration(
                     color: Color(0xFFEEEEEE),
                     borderRadius: BorderRadius.only(
@@ -139,15 +139,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       GestureDetector(
-                                        onTap: (){
-                                          Navigator.push(
-                                            context, 
-                                            MaterialPageRoute(
-                                              builder: (_) {
-                                                return TambahDetail();
-                                              },
-                                            )
-                                          );
+                                        onTap: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                            builder: (_) {
+                                              return TambahDetail();
+                                            },
+                                          ));
                                         },
                                         child: Column(
                                           children: [
@@ -184,74 +182,27 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         GestureDetector(
-                                        onTap: (){
-                                          Navigator.push(
-                                            context, 
-                                            MaterialPageRoute(
+                                          onTap: () {
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
                                               builder: (_) {
                                                 return TambahDetail();
                                               },
-                                            )
-                                          );
-                                        },
-                                        child: Column(
-                                          children : [
-                                          Image.asset(
-                                            'assets/images/laundry-basket.png',
-                                            width: 150,
-                                            height: 180,
-                                            fit: BoxFit.scaleDown,
-                                          ),
-                                          Text(
-                                            'Cuci Kering',
-                                            style: TextStyle(
-                                              fontFamily: 'Poppins',
-                                              fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      30, 0, 0, 0),
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color: Color(0xFFF5F5F5),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        GestureDetector(
-                                        onTap: (){
-                                          Navigator.push(
-                                            context, 
-                                            MaterialPageRoute(
-                                              builder: (_) {
-                                                return TambahDetail();
-                                              },
-                                            )
-                                          );
-                                        },
-                                        child: Column(
-                                          children : [
-                                          Image.asset(
-                                            'assets/images/iron.png',
-                                            width: 150,
-                                            height: 180,
-                                            fit: BoxFit.scaleDown,
-                                          ),
-                                          Text(
-                                            'Setrika',
-                                            style: TextStyle(
-                                              fontFamily: 'Poppins',
-                                              fontWeight: FontWeight.bold,
+                                            ));
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Image.asset(
+                                                'assets/images/laundry-basket.png',
+                                                width: 150,
+                                                height: 180,
+                                                fit: BoxFit.scaleDown,
+                                              ),
+                                              Text(
+                                                'Cuci Kering',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.bold,
                                                 ),
                                               ),
                                             ],
@@ -274,29 +225,70 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         GestureDetector(
-                                        onTap: (){
-                                          Navigator.push(
-                                            context, 
-                                            MaterialPageRoute(
+                                          onTap: () {
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
                                               builder: (_) {
                                                 return TambahDetail();
                                               },
-                                            )
-                                          );
-                                        },
-                                        child: Column(
-                                          children : [
-                                        Image.asset(
-                                          'assets/images/drying.png',
-                                          width: 150,
-                                          height: 180,
-                                          fit: BoxFit.scaleDown,
+                                            ));
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Image.asset(
+                                                'assets/images/iron.png',
+                                                width: 150,
+                                                height: 180,
+                                                fit: BoxFit.scaleDown,
+                                              ),
+                                              Text(
+                                                'Setrika',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                        Text(
-                                          'Semua',
-                                          style: TextStyle(
-                                            fontFamily: 'Poppins',
-                                            fontWeight: FontWeight.bold,
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      30, 0, 0, 0),
+                                  child: Card(
+                                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                                    color: Color(0xFFF5F5F5),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                              builder: (_) {
+                                                return TambahDetail();
+                                              },
+                                            ));
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Image.asset(
+                                                'assets/images/drying.png',
+                                                width: 150,
+                                                height: 180,
+                                                fit: BoxFit.scaleDown,
+                                              ),
+                                              Text(
+                                                'Semua',
+                                                style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.bold,
                                                 ),
                                               ),
                                             ],
@@ -352,7 +344,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(10),
                                   child: Image.asset(
                                     'assets/images/test2.png',
                                     width: 250,
