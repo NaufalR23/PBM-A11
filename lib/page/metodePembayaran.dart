@@ -55,7 +55,18 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                     padding:
                                         EdgeInsets.fromLTRB(30, 30, 30, 40),
                                     margin: EdgeInsets.fromLTRB(35, 50, 10, 0),
-                                    color: Colors.white,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.3),
+                                          spreadRadius: 4,
+                                          blurRadius: 5,
+                                          offset: Offset(0,
+                                              7), // changes position of shadow
+                                        ),
+                                      ],
+                                    ),
                                     child: Column(children: [
                                       new Container(
                                         width: 100.00,
@@ -81,7 +92,18 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                     padding:
                                         EdgeInsets.fromLTRB(30, 40, 30, 40),
                                     margin: EdgeInsets.fromLTRB(10, 50, 35, 0),
-                                    color: Colors.white,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.3),
+                                          spreadRadius: 4,
+                                          blurRadius: 5,
+                                          offset: Offset(0,
+                                              7), // changes position of shadow
+                                        ),
+                                      ],
+                                    ),
                                     child: Column(children: [
                                       Container(
                                           width: 100.00,
@@ -96,31 +118,120 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                           child: Align(
                                         alignment: Alignment.bottomLeft,
                                         child: Text(
-                                          '\n"dalam perbaikan"',
+                                          '\nTransfer',
                                           style: TextStyle(fontSize: 16),
                                         ),
                                       )),
                                     ]))
                               ]),
                               Container(
-                                  padding: EdgeInsets.fromLTRB(30, 40, 30, 40),
+                                  padding: EdgeInsets.fromLTRB(30, 10, 30, 5),
                                   margin: EdgeInsets.fromLTRB(35, 20, 35, 0),
-                                  color: Colors.white,
-                                  child: Column(children: [
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border(
+                                        bottom: (BorderSide(
+                                            width: 1.0, color: Colors.grey))),
+                                  ),
+                                  child: Row(children: [
                                     Container(
-                                        width: 100.00,
-                                        height: 90.00,
+                                        width: 40.00,
+                                        height: 40.00,
                                         decoration: new BoxDecoration(
                                             image: new DecorationImage(
                                           image: ExactAssetImage(
-                                              'assets/images/transfer-money.png'),
-                                          fit: BoxFit.fitHeight,
+                                              'assets/images/Logo Bank BCA.png'),
+                                          fit: BoxFit.fitWidth,
                                         ))),
                                     Container(
                                         child: Align(
                                       alignment: Alignment.bottomLeft,
                                       child: Text(
-                                        '\nTransfer',
+                                        '\t\t\t\tBank Central Asia',
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    )),
+                                  ])),
+                              Container(
+                                  padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                                  margin: EdgeInsets.fromLTRB(35, 0, 35, 0),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border(
+                                        bottom: (BorderSide(
+                                            width: 1.0, color: Colors.grey))),
+                                  ),
+                                  child: Row(children: [
+                                    Container(
+                                        width: 40.00,
+                                        height: 40.00,
+                                        decoration: new BoxDecoration(
+                                            image: new DecorationImage(
+                                          image: ExactAssetImage(
+                                              'assets/images/BRI.png'),
+                                          fit: BoxFit.fitWidth,
+                                        ))),
+                                    Container(
+                                        child: Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Text(
+                                        '\t\t\t\tBank Rakyat Indonesia',
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    )),
+                                  ])),
+                              Container(
+                                  padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                                  margin: EdgeInsets.fromLTRB(35, 0, 35, 0),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border(
+                                        bottom: (BorderSide(
+                                            width: 1.0, color: Colors.grey))),
+                                  ),
+                                  child: Row(children: [
+                                    Container(
+                                        width: 40.00,
+                                        height: 40.00,
+                                        decoration: new BoxDecoration(
+                                            image: new DecorationImage(
+                                          image: ExactAssetImage(
+                                              'assets/images/mandiri.png'),
+                                          fit: BoxFit.fitWidth,
+                                        ))),
+                                    Container(
+                                        child: Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Text(
+                                        '\t\t\t\tBank Mandiri',
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    )),
+                                  ])),
+                              Container(
+                                  padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                                  margin: EdgeInsets.fromLTRB(35, 0, 35, 0),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border(
+                                        bottom: (BorderSide(
+                                            width: 1.0, color: Colors.grey))),
+                                  ),
+                                  child: Row(children: [
+                                    Container(
+                                        width: 40.00,
+                                        height: 40.00,
+                                        decoration: new BoxDecoration(
+                                            image: new DecorationImage(
+                                          image: ExactAssetImage(
+                                              'assets/images/Logo bank BNI.png'),
+                                          fit: BoxFit.fitWidth,
+                                        ))),
+                                    Container(
+                                        child: Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Text(
+                                        '\t\t\t\tBank Negara Indonesia',
                                         style: TextStyle(fontSize: 16),
                                       ),
                                     )),
