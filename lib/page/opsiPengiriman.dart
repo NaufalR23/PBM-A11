@@ -55,7 +55,18 @@ class _opsiPengirimanState extends State<opsiPengiriman> {
                                     padding:
                                         EdgeInsets.fromLTRB(10, 30, 10, 40),
                                     margin: EdgeInsets.fromLTRB(40, 50, 10, 0),
-                                    color: Colors.white,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.3),
+                                          spreadRadius: 4,
+                                          blurRadius: 5,
+                                          offset: Offset(0,
+                                              7), // changes position of shadow
+                                        ),
+                                      ],
+                                    ),
                                     child: Column(children: [
                                       new Container(
                                         width: 100.00,
@@ -81,7 +92,18 @@ class _opsiPengirimanState extends State<opsiPengiriman> {
                                     padding:
                                         EdgeInsets.fromLTRB(20, 40, 20, 40),
                                     margin: EdgeInsets.fromLTRB(10, 50, 10, 0),
-                                    color: Colors.white,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.3),
+                                          spreadRadius: 4,
+                                          blurRadius: 5,
+                                          offset: Offset(0,
+                                              7), // changes position of shadow
+                                        ),
+                                      ],
+                                    ),
                                     child: Column(children: [
                                       Container(
                                           width: 100.00,
@@ -105,7 +127,18 @@ class _opsiPengirimanState extends State<opsiPengiriman> {
                               Container(
                                   padding: EdgeInsets.fromLTRB(10, 30, 10, 40),
                                   margin: EdgeInsets.fromLTRB(120, 40, 120, 20),
-                                  color: Colors.white,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.3),
+                                        spreadRadius: 4,
+                                        blurRadius: 5,
+                                        offset: Offset(
+                                            0, 7), // changes position of shadow
+                                      ),
+                                    ],
+                                  ),
                                   child: Column(children: [
                                     new Container(
                                       width: 100.00,
