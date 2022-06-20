@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:pbma11/page/tambahDetail.dart';
 import 'package:pbma11/qrCode.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 // import 'package:pbma11/page/details.dart';
 
 class HomeWidget extends StatefulWidget {
@@ -62,6 +63,21 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(185, 50, 0, 0),
+                      // child: InkWell(
+                      //   onTap: () async {
+                      //     await Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //         builder: (context) => ScanQrPage(),
+                      //       ),
+                      //     );
+                      //   },
+                      //   child: Icon(
+                      //     Icons.camera_alt,
+                      //     color: Colors.white,
+                      //     size: 40,
+                      //   ),
+                      // ),
                       child: InkWell(
                         onTap: () async {
                           await Navigator.push(
