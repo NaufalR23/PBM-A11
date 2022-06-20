@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pbma11/Login.dart';
+import 'package:pbma11/bahasa.dart';
 import 'package:pbma11/edit%20profil.dart';
 import 'package:pbma11/main.dart';
 import 'package:pbma11/maps.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pbma11/notifikasi.dart';
+import 'package:pbma11/notifikasiSetting.dart';
 import 'package:pbma11/terms_of_services.dart';
 
 class ProfilWidget extends StatefulWidget {
@@ -274,7 +276,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => NotifikasiWidget(),
+                                    builder: (context) => NotifSetting(),
                                   ),
                                 );
                               },
@@ -339,7 +341,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => NotifikasiWidget(),
+                                    builder: (context) => BahasaWidget(),
                                   ),
                                 );
                               },

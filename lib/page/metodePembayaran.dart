@@ -70,7 +70,7 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                     ),
                                     child: Column(children: [
                                       new Container(
-                                        width: 100.00,
+                                        width: 91.00,
                                         height: 100.00,
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
@@ -107,7 +107,7 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                     ),
                                     child: Column(children: [
                                       Container(
-                                          width: 100.00,
+                                          width: 91.00,
                                           height: 90.00,
                                           decoration: new BoxDecoration(
                                               image: new DecorationImage(

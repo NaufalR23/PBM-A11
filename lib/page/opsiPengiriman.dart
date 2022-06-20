@@ -33,7 +33,7 @@ class _opsiPengirimanState extends State<opsiPengiriman> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
                     width: 430,
-                    height: 663.22,
+                    height: 700,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(

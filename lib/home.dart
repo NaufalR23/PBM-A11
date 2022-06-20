@@ -67,7 +67,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QRCode(),
+                              builder: (context) => ScanQrPage(),
                             ),
                           );
                         },
