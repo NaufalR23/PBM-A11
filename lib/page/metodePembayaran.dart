@@ -71,15 +71,9 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                       ],
                                     ),
                                     child: Column(children: [
-<<<<<<< HEAD
                                       Container(
                                         width: 90.00,
                                         height: 98.00,
-=======
-                                      new Container(
-                                        width: 91.00,
-                                        height: 100.00,
->>>>>>> 87b4fe4de40c3b53d5dca2061ade113fb3c2a052
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: ExactAssetImage(
@@ -115,7 +109,6 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                     ),
                                     child: Column(children: [
                                       Container(
-<<<<<<< HEAD
                                         width: 90.00,
                                         height: 90.00,
                                         decoration: new BoxDecoration(
@@ -124,16 +117,6 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                               'assets/images/transfer-money.png'),
                                           fit: BoxFit.fitHeight,
                                         ))),
-=======
-                                          width: 91.00,
-                                          height: 90.00,
-                                          decoration: new BoxDecoration(
-                                              image: new DecorationImage(
-                                            image: ExactAssetImage(
-                                                'assets/images/transfer-money.png'),
-                                            fit: BoxFit.fitHeight,
-                                          ))),
->>>>>>> 87b4fe4de40c3b53d5dca2061ade113fb3c2a052
                                       Container(
                                           child: Align(
                                         alignment: Alignment.bottomRight,
