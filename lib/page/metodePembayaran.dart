@@ -21,19 +21,21 @@ class _metodePembayaranState extends State<metodePembayaran> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
-                  '\nMetode Pembayaran',
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child : Text(
+                  'Metode Pembayaran',
                   style: TextStyle(
                       fontFamily: 'Poppins',
                       color: Colors.white,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
-                ),
+                ),),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
-                    width: 430,
-                    height: 663.22,
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
@@ -69,14 +71,14 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                       ],
                                     ),
                                     child: Column(children: [
-                                      new Container(
-                                        width: 100.00,
-                                        height: 100.00,
+                                      Container(
+                                        width: 90.00,
+                                        height: 98.00,
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: ExactAssetImage(
                                                 'assets/images/dollar.png'),
-                                            fit: BoxFit.fitHeight,
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
@@ -107,17 +109,17 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                     ),
                                     child: Column(children: [
                                       Container(
-                                          width: 100.00,
-                                          height: 90.00,
-                                          decoration: new BoxDecoration(
-                                              image: new DecorationImage(
-                                            image: ExactAssetImage(
-                                                'assets/images/transfer-money.png'),
-                                            fit: BoxFit.fitHeight,
-                                          ))),
+                                        width: 90.00,
+                                        height: 90.00,
+                                        decoration: new BoxDecoration(
+                                            image: new DecorationImage(
+                                          image: ExactAssetImage(
+                                              'assets/images/transfer-money.png'),
+                                          fit: BoxFit.fitHeight,
+                                        ))),
                                       Container(
                                           child: Align(
-                                        alignment: Alignment.bottomLeft,
+                                        alignment: Alignment.bottomRight,
                                         child: Text(
                                           '\nTransfer',
                                           style: TextStyle(fontSize: 16),

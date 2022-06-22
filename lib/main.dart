@@ -4,11 +4,16 @@ import 'package:pbma11/Pendahuluan.dart';
 import 'package:pbma11/Signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pbma11/location/location_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => LocationProvider(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,9 +21,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Pendahuluan(),
-    );
+    return StreamBuilder(builder: (context, snapshot) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Pendahuluan(),
+      );
+    });
   }
 }

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pbma11/antrian.dart';
 import 'package:pbma11/home.dart';
+import 'package:pbma11/location/editProfil_alamat.dart';
 import 'package:pbma11/page/Tambahan.dart';
+import 'package:pbma11/page/metodePembayaran.dart';
+import 'package:pbma11/page/opsiPengiriman.dart';
+import 'package:pbma11/page/voucher.dart';
 
 class DetailPesanan extends StatefulWidget {
   const DetailPesanan ({Key? key}) : super(key: key);
@@ -92,7 +97,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                                     await Navigator.push(
                                                       context,
                                                       MaterialPageRoute(
-                                                        builder: (context) => TambahanWidget(),
+                                                        builder: (context) => EditProfilAlamat(),
                                                       ),
                                                     );
                                                   },
@@ -362,7 +367,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                                     await Navigator.push(
                                                       context,
                                                       MaterialPageRoute(
-                                                        builder: (context) => TambahanWidget(),
+                                                        builder: (context) => opsiPengiriman(),
                                                       ),
                                                     );
                                                   },
@@ -487,7 +492,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                                     await Navigator.push(
                                                       context,
                                                       MaterialPageRoute(
-                                                        builder: (context) => TambahanWidget(),
+                                                        builder: (context) => voucher(),
                                                       ),
                                                     );
                                                   },
@@ -654,7 +659,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                                     await Navigator.push(
                                                       context,
                                                       MaterialPageRoute(
-                                                        builder: (context) => TambahanWidget(),
+                                                        builder: (context) => metodePembayaran(),
                                                       ),
                                                     );
                                                   },
@@ -698,15 +703,12 @@ class _DetailPesananState extends State<DetailPesanan> {
                     ),
                     child : Padding(
                       padding: EdgeInsets.zero,
-                      child : ListView(
+                      child : Container(
                         padding: EdgeInsets.zero,
-                        // mainAxisSize: MainAxisSize.max,
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        // mainAxisAlignment: MainAxisAlignment.end,
-                        scrollDirection: Axis.vertical,
+                        child : ListView(
                         children: [
                           ListTile(
-                            title: Text(
+                            title : Text(
                             'Subtotal items',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -715,7 +717,8 @@ class _DetailPesananState extends State<DetailPesanan> {
                               fontWeight: FontWeight.w500,
                               ),
                             ),
-                            trailing: Text(
+
+                            trailing : Text(
                               'Rp.50000',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
@@ -724,7 +727,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            dense: false,
+                            // dense: false,
                           ),
                           ListTile(
                             title: Text(
@@ -820,7 +823,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (_) {
-                                      return const DetailPesanan();
+                                      return const AntrianWidget();
                                     },
                                   ),
                                 );
@@ -832,7 +835,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                       borderRadius: BorderRadius.circular(50)),
                                   primary: const Color.fromARGB(255, 32, 199, 99)),
                               child: const Text(
-                                "Prosess coba",
+                                "Proses",
                                 style: TextStyle(
                                   fontSize: 25, 
                                   fontFamily: "Poppins"
@@ -842,7 +845,8 @@ class _DetailPesananState extends State<DetailPesanan> {
                           ), 
                         ],
                       ),
-                    ),  
+                    ), 
+                    ), 
                   ),
                 ),
               ]
@@ -853,27 +857,4 @@ class _DetailPesananState extends State<DetailPesanan> {
     );
   }
 }
-
-// Text(
-                            
-//                               ),
-//                             ),
-//                           Text(
-//                             'Tambahan',
-//                             style: TextStyle(
-//                               fontFamily: 'Poppins',
-//                               color: Colors.black,
-//                               fontSize: 20,
-//                               fontWeight: FontWeight.w500,
-//                               ),
-//                             ),
-//                           Text(
-                            
-//                               ),
-//                             ),
-//                           Text(
-                            
-//                               ),
-//                             ),
-
                           

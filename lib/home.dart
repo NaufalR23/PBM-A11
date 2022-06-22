@@ -153,7 +153,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               'assets/images/laundry.png',
                                               width: 150,
                                               height: 180,
-                                              fit: BoxFit.scaleDown,
+                                              fit: BoxFit.fill,
                                             ),
                                             Text(
                                               'Cuci Basah',

@@ -7,11 +7,12 @@ class TambahanWidget extends StatefulWidget {
 
   @override
   _TambahanWidgetState createState() => _TambahanWidgetState();
+  // <TambahanWidgetState> createState() => _TambahanWidgetState();
   
 }
 
 class _TambahanWidgetState extends State<TambahanWidget> {
-  Map<String, Map<String, int>> order = {
+  Map<String, Map<String, int>> tambah = {
     "Putih": {'price': 500, 'total': 0},
     "Luntur": {'price': 500, 'total': 0}
   };
@@ -85,8 +86,8 @@ class _TambahanWidgetState extends State<TambahanWidget> {
                           child: SingleChildScrollView(
                             child: Column(
                               children: [
-                                clothWidget("Putih","Putih", 500),
-                                clothWidget("Luntur","Luntur",500),
+                                clothTambah("Putih","Putih", 500),
+                                clothTambah("Luntur","Luntur",500),
                               ],
                             ),
                           ),
@@ -181,132 +182,135 @@ class _TambahanWidgetState extends State<TambahanWidget> {
       ),
     );
   }
-}
-    Container clothWidget(String name, String type, int price,) {
-      var order;
-      return Container(
-        padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
-        child: Column(
-          children: [
-          Container(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 30, 0),
-            // width: 100,
-            height: 80,
-            margin: EdgeInsets.all(0),
-            decoration: BoxDecoration(
-              color: Colors.white, 
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(0),
-                topLeft: Radius.circular(0),
-                topRight: Radius.circular(0),
-              ),
+
+  Container clothTambah(String name, String type, int price) {
+    return Container(
+      padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
+      child: Column(
+        children: [
+        Container(
+          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 30, 0),
+          // width: 100,
+          height: 80,
+          margin: EdgeInsets.all(0),
+          decoration: BoxDecoration(
+            color: Colors.white, 
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(0),
+              bottomRight: Radius.circular(0),
+              topLeft: Radius.circular(0),
+              topRight: Radius.circular(0),
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 15, 150, 0),
-                  child: Column(
-                      children: [
-                        Text("$name", 
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            color: Colors.black,
-                            fontSize: 18,
-                            ),
-                          ),
-                        Text("Rp.$price", 
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 15, 120, 0),
+                child: Column(
+                    children: [
+                      Text("$name", 
                         style: TextStyle(
                           fontFamily: 'Poppins',
-                          color: Colors.red,
+                          color: Colors.black,
                           fontSize: 18,
                           ),
                         ),
-                      ]
-                    ),
-                  ),
-                  GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      // var order;
-                      if (order[name]!['total'] != 0) {
-                        order[name]!['total'] = order[name]!['total']! - 1;
-                      }
-                    });
-                  },
-                  child: Container(
-                      height: 25,
-                      width: 25,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(100),  
-                          border: Border.all(
-                            color: Colors.black
-                          )),
-                      child: Center(
-                          child: Icon(
-                        Icons.remove,
-                        size: 16,
-                        color: Colors.black,
+                      Text("Rp.$price", 
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.red,
+                        fontSize: 18,
+                        ),
                       ),
-                    ),
+                    ]
                   ),
-                ),
-                const SizedBox(
-                  width: 8,
-                ),
-                // SizedBox(
-                //   width: 20,
-                //   child: Center(
-                //     child: Text('${order[name]!['total']}',
-                //         style: TextStyle(
-                //         fontFamily: 'Poppins',
-                //         color: Colors.black,
-                //         fontSize: 25,
-                //         fontWeight: FontWeight.bold,
-                //         ),
-                //       ),
-                //   ),
-                // ),
-                const SizedBox(
-                  width: 8,
                 ),
                 GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      order[name]!['total'] = order[name]!['total']! + 1;
-                      // totalPrice = totalPrice + order[type]!['price']!;
-                    });
-                  },
-                  child: Container(
-                      height: 25,
-                      width: 25,
-                      decoration: BoxDecoration(
-                          color: Colors.white, 
-                          borderRadius: BorderRadius.circular(100),  
-                          border: Border.all(
-                            color: Colors.black
-                          )),
-                      child: Center(
-                          child: Icon(
-                        Icons.add,
-                        size: 16,
-                        color: Colors.grey.shade800,
-                      ),
+                onTap: () {
+                  setState(() {
+                    // var order;
+                    if (tambah[name]!['total'] != 0) {
+                      tambah[name]!['total'] = tambah[name]!['total']! - 1;
+                    }
+                  });
+                },
+                child: Container(
+                    height: 25,
+                    width: 25,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(100),  
+                        border: Border.all(
+                          color: Colors.black
+                        )),
+                    child: Center(
+                        child: Icon(
+                      Icons.remove,
+                      size: 16,
+                      color: Colors.black,
                     ),
                   ),
-                ),  
-                ]
-              ),    
-            ),
-          ]
-        ), 
+                ),
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              SizedBox(
+                width: 20,
+                child: Center(
+                  child: Text('${tambah[name]!['total']}',
+                      style: TextStyle(
+                      fontFamily: 'Poppins',
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                ),
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    tambah[name]!['total'] = tambah[name]!['total']! + 1;
+                    // totalPrice = totalPrice + order[type]!['price']!;
+                  });
+                },
+                child: Container(
+                    height: 25,
+                    width: 25,
+                    decoration: BoxDecoration(
+                        color: Colors.white, 
+                        borderRadius: BorderRadius.circular(100),  
+                        border: Border.all(
+                          color: Colors.black
+                        )),
+                    child: Center(
+                        child: Icon(
+                      Icons.add,
+                      size: 16,
+                      color: Colors.grey.shade800,
+                    ),
+                  ),
+                ),
+              ),  
+              ]
+            ),    
+          ),
+        ]
+      ), 
     );
   }
+}
   
-  void setState(Null Function() name) {
-  }
+  // void setState(Null Function() param0) {
+  // }
+  
+  // void setState(Null Function() name) {
+  // }
 // =======
 // import 'package:flutter/material.dart';
 // import 'package:pbma11/page/detailPesanan.dart';

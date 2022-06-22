@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pbma11/page/DetailPesananNew.dart';
 import 'package:pbma11/page/Tambahan.dart';
-import 'package:pbma11/page/detailPesanan.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-// class OrderPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: orderPage(),
-//     );
-//   }
-// }
+// ignore: use_key_in_widget_constructors
 class TambahDetail extends StatefulWidget {
   @override
   _TambahDetailState createState() => _TambahDetailState();
@@ -19,7 +11,16 @@ class TambahDetail extends StatefulWidget {
 
 class _TambahDetailState extends State<TambahDetail> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  get headingStyle => null;
+  // get headingStyle => null;
+  Map<String, Map<String, int>> order = {
+    "baju": {'price': 1000, 'total': 0},
+    "trousers": {'price': 1000, 'total': 0},
+    "jacket": {'price': 2000, 'total': 0},
+    "dress": {'price': 3000, 'total': 0},
+    "mukenah": {'price': 3000, 'total': 0},
+    "blanket": {'price': 3000, 'total': 0}
+  };
+  
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class _TambahDetailState extends State<TambahDetail> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
               child : Text(
                 'Tambah Detail',
                 style: TextStyle(
@@ -43,11 +44,11 @@ class _TambahDetailState extends State<TambahDetail> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
               child: Container(
                 padding: EdgeInsets.all(5),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height*0.8564,
+                height: MediaQuery.of(context).size.height*0.8875,
                 decoration: BoxDecoration(
                   color: Color(0xFFEEEEEE),
                   borderRadius: BorderRadius.only(
@@ -63,19 +64,19 @@ class _TambahDetailState extends State<TambahDetail> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            clothWidget("baju", "Baju", 1000),
-                            clothWidget("trousers", "Celana", 1000),
-                            clothWidget("jacket", "Jaket", 2000),
-                            clothWidget("dress", "Dress", 3000),
-                            clothWidget("mukenah", "Mukenah", 3000),
-                            clothWidget("blanket", "Selimut", 3000),
+                            clothWidget("baju", "Baju","baju",  1000),
+                            clothWidget("trousers", "Celana","trousers", 1000),
+                            clothWidget("jacket", "Jaket","jacket",  2000),
+                            clothWidget("dress", "Dress","dress",  3000),
+                            clothWidget("mukenah", "Mukenah","mukenah",  3000),
+                            clothWidget("blanket", "Selimut","blanket",  3000),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 35,),
+                    // SizedBox(height: 35,),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -139,7 +140,7 @@ class _TambahDetailState extends State<TambahDetail> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    // SizedBox(height: 3,),
                     Container(
                       padding: const EdgeInsets.all(15),
                       width: 355,
@@ -150,14 +151,14 @@ class _TambahDetailState extends State<TambahDetail> {
                               context,
                               MaterialPageRoute(
                                 builder: (_) {
-                                  return const TambahanWidget();
+                                  return const DetailPesanan();
                                 },
                               ),
                             );
                           },
                           style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.only(
-                                  left: 50, right: 50, top: 5, bottom: 5),
+                                  left: 50, right: 50, top: 5, bottom: 0),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50)),
                               primary: const Color.fromARGB(255, 32, 199, 99)),
@@ -180,33 +181,29 @@ class _TambahDetailState extends State<TambahDetail> {
     ),
   );
 }
-  Container clothWidget(String img, String name, int price)
+  Container clothWidget(String img, String name, String type, int price)
   {
     return Container(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
           Container(
-            padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 10, 0),
+            // width: 100,
+            height: 70,
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(12)),
             child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(0),
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/$img.png')
-                      )
+                Image.asset(
+                    'assets/images/$img.png',
+                    width: 60,
                   ),
-                ),
                 Container(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 15, 60, 0),
                   child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -226,75 +223,85 @@ class _TambahDetailState extends State<TambahDetail> {
                     ],
                   ),
                 ),
-                Row(
-                  children: [
-                    Container(
-                      height: 40,
-                      width: 40,
+                // Row(
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (order[type]!['total'] != 0) {
+                        order[type]!['total'] = order[type]!['total']! - 1;
+                      }
+                    });
+                  },
+                  child: Container(
+                      height: 25,
+                      width: 25,
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          shape: BoxShape.circle
-                      ),
+                          borderRadius: BorderRadius.circular(100),  
+                          border: Border.all(
+                            color: Colors.black
+                          )),
                       child: Center(
-                        child: Text("-", 
+                          child: Icon(
+                        Icons.remove,
+                        size: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                SizedBox(
+                  width: 20,
+                  child: Center(
+                    child: Text('${order[type]!['total']}',
                         style: TextStyle(
                         fontFamily: 'Poppins',
                         color: Colors.black,
-                        fontSize: 20,
-                          ),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
-                    Container(
-                      height: 40,
-                      width: 40,
-                      child: Center(
-                        child: Text("0", 
-                        style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: Colors.black,
-                        fontSize: 18,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 40,
-                      width: 40,
+                  ),
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      order[type]!['total'] = order[type]!['total']! + 1;
+                      // totalPrice = totalPrice + order[type]!['price']!;
+                    });
+                  },
+                  child: Container(
+                      height: 25,
+                      width: 25,
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle
-                      ),
+                          color: Colors.white, 
+                          borderRadius: BorderRadius.circular(100),  
+                          border: Border.all(
+                            color: Colors.black
+                          )),
                       child: Center(
-                        child: Text("+", 
-                        style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: Colors.black,
-                        fontSize: 18,
-                          ),
-                        ),
+                          child: Icon(
+                        Icons.add,
+                        size: 16,
+                        color: Colors.grey.shade800,
                       ),
                     ),
-                  ],
-                )
+                  ),
+                ),    
               ],
             ),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.end,
-          //   children: [
-          //     Container(
-          //       height: 1,
-          //       width: MediaQuery.of(context).size.width*0.75,
-          //       color: Colors.grey,
-          //     ),
-          //   ],
-          // )
         ],
       ),
     );
   }
-  Column categoryWidget(String img, String name, bool isActive)
+  Column categoryWidget(String img, String name, String type, bool isActive)
   {
     return Column(
       children: [
@@ -310,14 +317,14 @@ class _TambahDetailState extends State<TambahDetail> {
               children: [
                   Image.asset(
                     'assets/images/$img.png',
-                    width: 48,
+                    width: 60,
                   ),
                 ]
               ),
             ),
           ),
         ),
-        Text(name, style: headingStyle)
+        // Text(name, style: headingStyle)
       ],
     );
   }

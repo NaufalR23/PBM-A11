@@ -21,19 +21,21 @@ class _opsiPengirimanState extends State<opsiPengiriman> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
-                  '\nOpsi Pengiriman',
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child : Text(
+                  'Opsi Pengiriman',
                   style: TextStyle(
                       fontFamily: 'Poppins',
                       color: Colors.white,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
-                ),
+                ),),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
-                    width: 430,
-                    height: 663.22,
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height*0.88,
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
