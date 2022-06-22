@@ -7,7 +7,11 @@ import 'package:pbma11/main.dart';
 import 'package:pbma11/maps.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pbma11/notifikasi.dart';
+<<<<<<< HEAD
 import 'package:pbma11/page/voucher.dart';
+=======
+import 'package:pbma11/notifikasiSetting.dart';
+>>>>>>> 87b4fe4de40c3b53d5dca2061ade113fb3c2a052
 import 'package:pbma11/terms_of_services.dart';
 
 class ProfilWidget extends StatefulWidget {
@@ -276,7 +280,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => NotifikasiWidget(),
+                                    builder: (context) => NotifSetting(),
                                   ),
                                 );
                               },

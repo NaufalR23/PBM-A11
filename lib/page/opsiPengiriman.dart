@@ -34,8 +34,13 @@ class _opsiPengirimanState extends State<opsiPengiriman> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
+<<<<<<< HEAD
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height*0.88,
+=======
+                    width: 430,
+                    height: 700,
+>>>>>>> 87b4fe4de40c3b53d5dca2061ade113fb3c2a052
                     decoration: BoxDecoration(
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.only(
