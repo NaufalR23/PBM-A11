@@ -67,17 +67,69 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: LabeledSwitch(
-        label: 'This is the label text',
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        value: _isSelected,
-        onChanged: (bool newValue) {
-          setState(() {
-            _isSelected = newValue;
-          });
-        },
-      ),
+    return Column(
+      children: [
+        Container(
+          child: LabeledSwitch(
+            label: 'Tampilkan Notifikasi',
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            value: _isSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                _isSelected = newValue;
+              });
+            },
+          ),
+        ),
+        Container(
+          child: LabeledSwitch(
+            label: 'Izinkan Lencana Notifikasi',
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            value: _isSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                _isSelected = newValue;
+              });
+            },
+          ),
+        ),
+        Container(
+          child: LabeledSwitch(
+            label: 'Suara Notifikasi',
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            value: _isSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                _isSelected = newValue;
+              });
+            },
+          ),
+        ),
+        Container(
+          child: LabeledSwitch(
+            label: 'Getaran Notifikasi',
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            value: _isSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                _isSelected = newValue;
+              });
+            },
+          ),
+        ),
+        Container(
+          child: LabeledSwitch(
+            label: 'Notifikasi Melayang',
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            value: _isSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                _isSelected = newValue;
+              });
+            },
+          ),
+        ),
+      ],
     );
   }
 }

@@ -75,118 +75,119 @@ class _LoginWidgetState extends State<LoginWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
                       // child: SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: TextFormField(
-                                controller: emailController,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  hintText: 'Username',
-                                  labelStyle: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFF95A1AC),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFF95A1AC),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                      24, 20, 24, 20),
-                                ),
-                                style: TextStyle(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            child: TextFormField(
+                              controller: emailController,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                hintText: 'Username',
+                                labelStyle: TextStyle(
                                   fontFamily: 'Poppins',
-                                  color: Color(0xFF0F1113),
+                                  color: Color(0xFF95A1AC),
+                                  fontSize: 18,
                                   fontWeight: FontWeight.normal,
                                 ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: TextFormField(
-                                keyboardType: TextInputType.visiblePassword,
-                                validator: (password) => password != null && password.length < 5
-                                    ? 'Enter the min 5 password'
-                                    : null,
-                                controller: passwordController,
-                                obscureText: !passwordVisibility,
-                                decoration: InputDecoration(
-                                  hintText: 'Password',
-                                  labelStyle: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFF95A1AC),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFF95A1AC),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: BorderRadius.circular(40),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                      24, 20, 24, 20),
-                                  suffixIcon: InkWell(
-                                    onTap: () => setState(
-                                      () => passwordVisibility =
-                                          !passwordVisibility,
-                                    ),
-                                    child: Icon(
-                                      passwordVisibility
-                                          ? Icons.visibility_outlined
-                                          : Icons.visibility_off_outlined,
-                                      color: Color(0xFF95A1AC),
-                                      size: 20,
-                                    ),
-                                  ),
-                                ),
-                                style: TextStyle(
+                                hintStyle: TextStyle(
                                   fontFamily: 'Poppins',
-                                  color: Color(0xFF0F1113),
+                                  color: Color(0xFF95A1AC),
+                                  fontSize: 18,
                                   fontWeight: FontWeight.normal,
                                 ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(40),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(40),
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                    24, 20, 24, 20),
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Color(0xFF0F1113),
+                                fontWeight: FontWeight.normal,
                               ),
                             ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                            child: TextFormField(
+                              keyboardType: TextInputType.visiblePassword,
+                              validator: (password) =>
+                                  password != null && password.length < 5
+                                      ? 'Enter the min 5 password'
+                                      : null,
+                              controller: passwordController,
+                              obscureText: !passwordVisibility,
+                              decoration: InputDecoration(
+                                hintText: 'Password',
+                                labelStyle: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xFF95A1AC),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                hintStyle: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xFF95A1AC),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(40),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(40),
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                    24, 20, 24, 20),
+                                suffixIcon: InkWell(
+                                  onTap: () => setState(
+                                    () => passwordVisibility =
+                                        !passwordVisibility,
+                                  ),
+                                  child: Icon(
+                                    passwordVisibility
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
+                                    color: Color(0xFF95A1AC),
+                                    size: 20,
+                                  ),
+                                ),
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Color(0xFF0F1113),
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -214,23 +215,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             child: ElevatedButton(
-                                onPressed: () async {
-                                  _doLogin();
-                                },
-                                child: Text(
-                                  "LOGIN",
-                                  style: TextStyle(
+                              onPressed: () async {
+                                _doLogin();
+                              },
+                              child: Text(
+                                "LOGIN",
+                                style: TextStyle(
                                     fontSize: 20,
                                     fontFamily: "Poppins",
                                     color: Colors.white),
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  minimumSize: Size(180, 50),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50)),
-                                  primary: Color(0xFF20C763),
-                                ),
                               ),
+                              style: ElevatedButton.styleFrom(
+                                minimumSize: Size(180, 50),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50)),
+                                primary: Color(0xFF20C763),
+                              ),
+                            ),
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -317,7 +318,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ],
                       ),
-
                     ),
                   ],
                 ),
@@ -328,6 +328,7 @@ class _LoginWidgetState extends State<LoginWidget> {
       ),
     );
   }
+
   _doLogin() async {
     try {
       var email = emailController.text;
@@ -347,34 +348,31 @@ class _LoginWidgetState extends State<LoginWidget> {
       print(res);
 
       await showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: const Text(
-                "Login Berhasil",
-                style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontWeight:
-                        FontWeight.w700,
-                    fontSize: 28),
-              ),
-              content: const Text(
-                "Berhasil Login",
-                style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontWeight:
-                        FontWeight.w400,
-                    fontSize: 16),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pop();
-                  },
-                  child: Text('OK'),
-                )
-              ],
-            ));
+          context: context,
+          builder: (context) => AlertDialog(
+                title: const Text(
+                  "Login Berhasil",
+                  style: TextStyle(
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w700,
+                      fontSize: 28),
+                ),
+                content: const Text(
+                  "Berhasil Login",
+                  style: TextStyle(
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16),
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('OK'),
+                  )
+                ],
+              ));
       Navigator.push(context, MaterialPageRoute(builder: (_) {
         return BottomWidget();
       }));
@@ -395,6 +393,3 @@ class _LoginWidgetState extends State<LoginWidget> {
     }
   }
 }
-
-
-

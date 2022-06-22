@@ -71,8 +71,7 @@ class Pendahuluan extends StatelessWidget {
                   child: const Text(
                     "Mulai",
                     style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
-                  )
-                ),
+                  )),
             ),
           ],
         )),
