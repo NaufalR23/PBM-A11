@@ -81,20 +81,20 @@ class Pilihan extends StatelessWidget {
                     style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
                   )),
             ),
-            Center(
-              child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.only(
-                          left: 50, right: 50, top: 5, bottom: 5),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      primary: const Color.fromARGB(255, 32, 199, 99)),
-                  child: const Text(
-                    "Karyawan",
-                    style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
-                  )),
-            )
+            // Center(
+            //   child: ElevatedButton(
+            //       onPressed: () {},
+            //       style: ElevatedButton.styleFrom(
+            //           padding: const EdgeInsets.only(
+            //               left: 50, right: 50, top: 5, bottom: 5),
+            //           shape: RoundedRectangleBorder(
+            //               borderRadius: BorderRadius.circular(50)),
+            //           primary: const Color.fromARGB(255, 32, 199, 99)),
+            //       child: const Text(
+            //         "Karyawan",
+            //         style: TextStyle(fontSize: 30, fontFamily: "Poppins"),
+            //       )),
+            // )
           ],
         )),
       ),
