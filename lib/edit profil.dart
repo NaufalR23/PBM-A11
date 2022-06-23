@@ -90,15 +90,27 @@ class _EditWidgetState extends State<EditWidget> {
           key: _formKey,
           child: ListView(
             children: [
-              const Text(
-                "Edit Profile",
-                style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 36),
+              const SizedBox(
+                height: 5,
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 70,
+                  ),
+                ],
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
                 child: Center(
                   child: Stack(
                     children: <Widget>[
@@ -405,7 +417,7 @@ class _EditWidgetState extends State<EditWidget> {
                                 style: TextStyle(
                                     fontFamily: "Poppins",
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 36),
+                                    fontSize: 20),
                               ),
                               content: const Text(
                                 "Apakah Anda Yakin Untuk Hapus Akun?",
@@ -447,7 +459,7 @@ class _EditWidgetState extends State<EditWidget> {
                     style: TextStyle(
                         color: Color(0xFFFFFFFF),
                         fontWeight: FontWeight.bold,
-                        fontSize: 12,
+                        fontSize: 20,
                         decoration: TextDecoration.underline),
                   ),
                 ),
@@ -456,6 +468,8 @@ class _EditWidgetState extends State<EditWidget> {
                 padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
                 child: RoundedButton(
                   text: "Simpan",
+                  color: Color.fromARGB(255, 32, 199, 99),
+                  // textcolor: Colors.white,
                   press: () async {
                     final FormState = _formKey.currentState;
                     if (FormState!.validate()) {

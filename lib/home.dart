@@ -5,6 +5,7 @@ import 'package:pbma11/notifikasi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:pbma11/page/tambahDetail.dart';
+import 'package:pbma11/page/voucher.dart';
 import 'package:pbma11/qrCode.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 // import 'package:pbma11/page/details.dart';
@@ -340,6 +341,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(
+                                  builder: (_) {
+                                    return voucher();
+                                  },
+                                ));
+                              },
+                              child: Row(
+                                children: [
                               Align(
                                 alignment: AlignmentDirectional(0, 0),
                                 child: Padding(
@@ -369,6 +381,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   ),
                                 ),
                               ),
+                              ]
+                            ),
+                            ),
                             ],
                           ),
                         ),

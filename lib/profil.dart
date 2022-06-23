@@ -10,6 +10,8 @@ import 'package:pbma11/notifikasi.dart';
 import 'package:pbma11/notifikasiSetting.dart';
 import 'package:pbma11/page/voucher.dart';
 import 'package:pbma11/terms_of_services.dart';
+import 'package:cool_alert/cool_alert.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class ProfilWidget extends StatefulWidget {
   const ProfilWidget({Key? key}) : super(key: key);
@@ -19,6 +21,13 @@ class ProfilWidget extends StatefulWidget {
 }
 
 class _ProfilWidgetState extends State<ProfilWidget> {
+  showAlert() async {
+    Alert(
+        context: context,
+        title: "RFLUTTEasdasdR",
+        desc: "Flutadasdasdter is awesome.")
+    .show();
+  }
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -212,7 +221,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => voucher(),
+                                    builder: (context) => MapLokasi(),
                                   ),
                                 );
                               },
@@ -470,11 +479,30 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                             child: InkWell(
                               onTap: () async {
                                 FirebaseAuth.instance.signOut().then((value) {
+                                  CoolAlert.show(
+                                    context: context,
+                                    type: CoolAlertType.confirm,
+                                    backgroundColor:
+                                        Colors.white,
+                                    title: 'apakah anda yakin ingin logout?',
+                                    onConfirmBtnTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const LoginWidget()),
+                                      );
+                                    },
+                                    onCancelBtnTap: () {
+                                      Navigator.of(context, rootNavigator: true).pop();
+                                    },
+                                    cancelBtnTextStyle: const TextStyle(
+                                        color: Color(0xFF197BFF)),
+                                    confirmBtnColor:
+                                        Colors.green,
+                                    confirmBtnTextStyle: const TextStyle(
+                                        color: Colors.white),
+                                    );
                                   print("Telah Keluar");
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => LoginWidget()));
                                 });
                               },
                               child: Icon(
@@ -483,13 +511,13 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                                 size: 40,
                               ),
                             ),
-                          ),
+                          ),              
                         ],
                       ),
                     ),
                   ),
                 ),
-              ],
+              ]
             ),
           ),
         ],
@@ -497,3 +525,4 @@ class _ProfilWidgetState extends State<ProfilWidget> {
     );
   }
 }
+void showAlert() {}

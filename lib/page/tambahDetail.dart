@@ -31,24 +31,40 @@ class _TambahDetailState extends State<TambahDetail> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-              child : Text(
-                'Tambah Detail',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+            const SizedBox(
+                  height: 5,
                 ),
-              ),
-            ),
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 60,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      child: Text("Tambah Detail",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 25)),
+                    ),
+                  ],
+                ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(0,5, 0, 0),
               child: Container(
                 padding: EdgeInsets.all(5),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height*0.8875,
+                height: MediaQuery.of(context).size.height*0.875,
                 decoration: BoxDecoration(
                   color: Color(0xFFEEEEEE),
                   borderRadius: BorderRadius.only(
@@ -158,7 +174,7 @@ class _TambahDetailState extends State<TambahDetail> {
                           },
                           style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.only(
-                                  left: 50, right: 50, top: 5, bottom: 0),
+                                  left: 50, right: 50, top: 0, bottom: 0),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50)),
                               primary: const Color.fromARGB(255, 32, 199, 99)),
@@ -171,7 +187,7 @@ class _TambahDetailState extends State<TambahDetail> {
                           ),
                         ),
                     ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 5,),
                 ]
               ),
             ),

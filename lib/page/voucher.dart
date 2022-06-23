@@ -22,7 +22,7 @@ class _voucherState extends State<voucher> {
           return {
             'nama': e['nama'],
             'tagline': e['tagline'],
-            'gambar': e['gambar']
+            'gambar': e['gambar'],
           };
         }).toList();
       });
@@ -52,7 +52,7 @@ class _voucherState extends State<voucher> {
                         Navigator.pop(context);
                       },
                       icon: const Icon(
-                        Icons.arrow_back_rounded,
+                        Icons.arrow_back_ios,
                         color: Colors.white,
                       ),
                     ),
