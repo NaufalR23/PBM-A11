@@ -23,14 +23,15 @@ class _metodePembayaranState extends State<metodePembayaran> {
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                  child : Text(
-                  'Metode Pembayaran',
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),),
+                  child: Text(
+                    'Metode Pembayaran',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Container(
@@ -109,14 +110,14 @@ class _metodePembayaranState extends State<metodePembayaran> {
                                     ),
                                     child: Column(children: [
                                       Container(
-                                        width: 90.00,
-                                        height: 90.00,
-                                        decoration: new BoxDecoration(
-                                            image: new DecorationImage(
-                                          image: ExactAssetImage(
-                                              'assets/images/transfer-money.png'),
-                                          fit: BoxFit.fitHeight,
-                                        ))),
+                                          width: 90.00,
+                                          height: 90.00,
+                                          decoration: new BoxDecoration(
+                                              image: new DecorationImage(
+                                            image: ExactAssetImage(
+                                                'assets/images/transfer-money.png'),
+                                            fit: BoxFit.fitHeight,
+                                          ))),
                                       Container(
                                           child: Align(
                                         alignment: Alignment.bottomRight,
