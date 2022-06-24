@@ -51,25 +51,13 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Card(
-                    // clipBehavior: Clip.antiAliasWithSaveLayer,
-                    // color: Colors.white,
-                    // elevation: 0,
-                    // shape: RoundedRectangleBorder(
-                    //   borderRadius: BorderRadius.circular(8),
-                    // ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.asset(
-                          "assets/images/profile.png",
-                        ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                    child: Container(
+                      width: 70,
+                      height: 70,
+                      child: Image.asset(
+                        "assets/images/profile.png",
                       ),
                     ),
                   ),
@@ -82,7 +70,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Username',
+                            'Falijul Rahma',
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               color: Colors.white,
@@ -93,11 +81,11 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                             child: Text(
-                              'Email_Address',
+                              'Falijulrahma@gmail.com',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 color: Color(0xB4FFFFFF),
-                                fontSize: 14,
+                                fontSize: 15,
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
