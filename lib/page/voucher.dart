@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:pbma11/page/DetailPesananNew.dart';
 
 class voucher extends StatefulWidget {
   @override
@@ -111,8 +112,8 @@ class _voucherState extends State<voucher> {
                                           ClipRRect(
                                             borderRadius:
                                                 BorderRadius.all(Radius.circular(8.0)),
-                                            child: Image.asset(
-                                              "assets/images/${item['gambar']}.png",
+                                            child: Image.network(
+                                              "${item['gambar']}.png",
                                               // width: 300,
                                               height: sizeHeight * 0.15,
                                               fit: BoxFit.cover),
@@ -131,7 +132,17 @@ class _voucherState extends State<voucher> {
                                                   color: Color.fromARGB(255, 94, 194, 240)),
                                             ),
                                             trailing: ElevatedButton(
-                                                onPressed: () {}, child: Text("Pakai")),
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (_) {
+                                                        return DetailPesanan();
+                                                      },
+                                                    ),
+                                                  );
+                                                }, child: Text("Pakai")
+                                              ),
                                           ),
                                         ],
                                       ),
