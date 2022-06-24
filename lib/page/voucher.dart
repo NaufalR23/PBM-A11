@@ -141,7 +141,7 @@ class _voucherState extends State<voucher> {
                                                       },
                                                     ),
                                                   );
-                                                }, child: Text("Pakai")
+                                                }, child: Text("Pilih")
                                               ),
                                           ),
                                         ],
