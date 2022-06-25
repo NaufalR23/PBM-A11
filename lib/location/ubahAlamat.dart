@@ -94,7 +94,9 @@ class UbahAlamat extends StatelessWidget {
                               SizedBox(height: 10),
                             CustomButton(
                               inputText: 'Hapus Alamat',
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
                                color: Color.fromARGB(255, 32, 199, 99),
                                 textcolor: Colors.white,),
                             ]

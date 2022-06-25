@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pbma11/Pendahuluan.dart';
+import 'package:pbma11/profil.dart';
 import 'package:pbma11/rounded_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -503,7 +504,7 @@ class _EditWidgetState extends State<EditWidget> {
                                         fontSize: 28),
                                   ),
                                   content: const Text(
-                                    "Perubahan Berhasil Disimpan, Silahkan login kembali",
+                                    "Perubahan Berhasil Disimpan",
                                     style: TextStyle(
                                         fontFamily: "Poppins",
                                         fontWeight: FontWeight.w400,
@@ -512,7 +513,7 @@ class _EditWidgetState extends State<EditWidget> {
                                   actions: [
                                     TextButton(
                                         onPressed: () {
-                                          Navigator.of(context).pop();
+                                          Navigator.of(context);
                                         },
                                         child: const Text('OK'))
                                   ],

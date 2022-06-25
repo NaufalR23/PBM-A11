@@ -50,7 +50,9 @@ class _LokasiSaatIniState extends State<LokasiSaatIni> {
                 SizedBox(height: 10),
                 CustomButton(
                   inputText: 'Simpan',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   color: Colors.green,
                   textcolor: Colors.white,
                 ),

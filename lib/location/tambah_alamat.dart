@@ -217,10 +217,12 @@ class TambahAlamat extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 350),
+                        const SizedBox(height: 100),
                         CustomButton(
                           inputText: 'Simpan',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                           color: Color.fromARGB(255, 32, 199, 99),
                           textcolor: Colors.white,
                         ),
