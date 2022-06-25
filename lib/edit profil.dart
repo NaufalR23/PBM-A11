@@ -7,6 +7,7 @@ import 'package:pbma11/Pendahuluan.dart';
 import 'package:pbma11/rounded_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:path/path.dart' as path;
 
 class EditWidget extends StatefulWidget {
   const EditWidget({Key? key}) : super(key: key);
@@ -70,6 +71,12 @@ class _EditWidgetState extends State<EditWidget> {
     if (image == null) return;
     final imageTemp = File(image.path);
     setState(() => this._image = imageTemp);
+  }
+
+  Future<DocumentSnapshot<Object?>> getData(String docID) async {
+    DocumentReference docRef =
+        FirebaseFirestore.instance.collection("user").doc(docID);
+    return docRef.get();
   }
 
   @override

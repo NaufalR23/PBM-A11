@@ -1,3 +1,4 @@
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pbma11/bottomnavigator.dart';
@@ -270,67 +271,61 @@ class _LoginWidgetState extends State<LoginWidget> {
     );
   }
 
-  _doLogin() async {
+  void berhasil(BuildContext context) {
+    CoolAlert.show(
+        context: context,
+        type: CoolAlertType.success,
+        title: "Success!",
+        text: "Berhasil Login",
+        backgroundColor: Color(0xFF0F82FF),
+        confirmBtnColor: Colors.green,
+        onConfirmBtnTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const BottomWidget()),
+          );
+        });
+  }
+
+  void alert_salah(BuildContext context) {
+    CoolAlert.show(
+        context: context,
+        type: CoolAlertType.error,
+        title: "Terjadi Kesalahan",
+        text: "Email atau Password Salah",
+        backgroundColor: Color(0xFF0F82FF),
+        confirmBtnColor: Colors.green,
+        onConfirmBtnTap: () {
+          Navigator.pop(context);
+        });
+  }
+
+  void  _doLogin() async {
     try {
       var email = emailController.text;
       var pass = passwordController.text;
-      // var nama = _usernameController;
-      // var alamat = _alamatController;
-
       print('sedang login');
       var res = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: pass,
-        // nama : nama,
-        // alamat: alamat,
       );
-
-      print('Hasil Login : ');
+      var cb = res.user!.uid;
+      print(cb);
       print(res);
-
-      await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-                title: const Text(
-                  "Login Berhasil",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 28),
-                ),
-                content: const Text(
-                  "Berhasil Login",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16),
-                ),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('OK'),
-                  )
-                ],
-              ));
-      Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return BottomWidget();
-      }));
-    } catch (e) {
-      print('exception login');
-      print(e.runtimeType);
-      if (e is FirebaseAuthException) {
-        print(e);
-        print(e.message);
+      print('berhasil');
+      berhasil(context);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == null) {
+        alert_salah(context);
       }
-
-      final snackBar = SnackBar(
-        duration: const Duration(seconds: 5),
-        content: Text("Email atau Password Tidak Boleh Kosong"),
-        backgroundColor: Colors.red,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+        alert_salah(context);
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+        alert_salah(context);
+      }
+      ;
     }
   }
 }

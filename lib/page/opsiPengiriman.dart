@@ -88,7 +88,8 @@ class _opsiPengirimanState extends State<opsiPengiriman> {
                                         ),
                                       ],
                                     ),
-                                    child: Column(children: [
+                                    child: Column(
+                                      children: [
                                       new Container(
                                         width: 100.00,
                                         height: 100.00,

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pbma11/Login.dart';
@@ -408,68 +409,67 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  _doSignUp() async {
+  void berhasil(BuildContext context) {
+    CoolAlert.show(
+        context: context,
+        type: CoolAlertType.success,
+        title: "Success!",
+        text: "Akunmu berhasil didaftarkan!",
+        backgroundColor: Color(0xFF0F82FF),
+        confirmBtnColor: Colors.green,
+        onConfirmBtnTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginWidget()),
+          );
+        });
+  }
+
+  void alert_salah(BuildContext context) {
+    CoolAlert.show(
+        context: context,
+        type: CoolAlertType.error,
+        title: "Terjadi Kesalahan",
+        text: "Email atau Password Tidak Boleh Kosong",
+        backgroundColor: Color(0xFF0F82FF),
+        confirmBtnColor: Colors.green,
+        onConfirmBtnTap: () {
+          Navigator.pop(context);
+        });
+  }
+
+  void _doSignUp() async {
     try {
       var email = _emailController.text;
       var pass = _passwordController.text;
-      // var nama = _usernameController;
-      // var alamat = _alamatController;
-
-      print('sedang daftar');
       var res = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
-        password: pass,
-        // nama : nama,
-        // alamat: alamat,
-      );
-
-      print('Hasil Daftar : ');
+        password: pass,);
       print(res);
-
-      await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-                title: const Text(
-                  "Telah Berhasil Daftar",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 28),
-                ),
-                content: const Text(
-                  "Akunmu berhasil didaftarkan!",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16),
-                ),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('OK'),
-                  )
-                ],
-              ));
-
-      Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return LoginWidget();
-      }));
-    } catch (e) {
-      print('exception daftar');
-      print(e.runtimeType);
-      if (e is FirebaseAuthException) {
-        print(e);
-        print(e.message);
+      print('Berhasil daftar');
+      berhasil(context);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('Password should be at least 6 characters');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
       }
-
-      final snackBar = SnackBar(
-        duration: const Duration(seconds: 5),
-        content: Text("Email atau Password Tidak Boleh Kosong"),
-        backgroundColor: Colors.red,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } catch (e) {
+      print(e);
     }
   }
+
+  void _add_user() async {
+    var collection = FirebaseFirestore.instance.collection('user');
+    var res = await collection.add({
+      'username': username,
+      'alamat': alamat,
+      'email': email,
+      'pass': pass,
+    });
+    print('berhasil ditambahkan');
+    print(res);
+  }
 }
+
+// 
