@@ -36,8 +36,8 @@ class _AlamatState extends State<Alamat> {
     }
     if (permission == LocationPermission.deniedForever) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text(
-              'Izin lokasi ditolak, kami tidak dapat meminta izin.')));
+          content:
+              Text('Izin lokasi ditolak, kami tidak dapat meminta izin.')));
       return false;
     }
     return true;
@@ -91,11 +91,11 @@ class _AlamatState extends State<Alamat> {
             label: Text(_currentAddress ?? "",
                 style: const TextStyle(
                     fontFamily: "Poppins", color: Colors.white)),
-                style: TextButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
-                    )),
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0),
+                )),
           ),
         ),
       ],

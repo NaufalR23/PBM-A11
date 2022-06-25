@@ -26,36 +26,35 @@ class _DetailPesananState extends State<DetailPesanan> {
         child: SafeArea(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
-            child: Column(mainAxisSize: MainAxisSize.max, 
-            children: [
+            child: Column(mainAxisSize: MainAxisSize.max, children: [
               const SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                      ),
+                height: 5,
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
                     ),
-                    const SizedBox(
-                      width: 60,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      child: Text("Detail Pesanan",
+                  ),
+                  const SizedBox(
+                    width: 60,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Text("Detail Pesanan",
                         style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Poppins',
-                          fontSize: 25)),
-                    ),
-                  ],
-                ),
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                            fontSize: 25)),
+                  ),
+                ],
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: Container(
@@ -77,7 +76,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                           scrollDirection: Axis.vertical,
                           children: [
                             Padding(
-                              padding: EdgeInsets.fromLTRB(5, 20, 10, 10),
+                              padding: EdgeInsets.fromLTRB(0, 20, 10, 10),
                               child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -93,7 +92,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5, 0, 0, 0),
+                                                  0, 0, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -110,7 +109,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(20, 0, 0, 0),
+                                                    .fromSTEB(10, 0, 0, 0),
                                                 child: GestureDetector(
                                                   onTap: () async {
                                                     await Navigator.push(
@@ -691,7 +690,7 @@ class _DetailPesananState extends State<DetailPesanan> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(30, 0, 0, 0),
+                                                      .fromSTEB(10, 0, 0, 0),
                                                   child: Row(children: [
                                                     Text(
                                                       'Transfer',
